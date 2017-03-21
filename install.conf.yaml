@@ -1,0 +1,28 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.agignore: agignore
+    ~/.config/i3: i3
+    ~/.config/rofi: rofi
+    ~/.config/termite: termite
+    ~/.config/gtk-3.0: gtk-3.0
+    ~/.gitignore_global: gitignore_global
+    ~/.git_template: git_template
+    ~/.gnupg: gnupg
+    ~/.rubocop.yml: rubocop.yml
+    ~/.rspec: rspec
+    ~/.tmux.conf: tmux.conf
+    ~/.tmux: tmux
+    ~/.vim: vim
+    ~/.vimrc: vimrc
+    ~/.Xresources: Xresources
+    ~/.zshrc: zshrc
+
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

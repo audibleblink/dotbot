@@ -1,0 +1,48 @@
+! Enabled modi
+rofi.modi:                           run
+
+! Window opacity
+rofi.opacity:                        85
+
+! Window width
+rofi.width:                          100
+
+! Number of lines
+rofi.lines:                          4
+
+! Font to use
+rofi.font:                           Source Code Pro 18
+
+! Color scheme for normal row
+rofi.color-normal:                   #2f343f,#cccccc,#2f343f,#2f343f,#f99157
+
+! Color scheme for active row
+rofi.color-active:                   #2f343f,#0000ff,#2f343f,#f3f4f5,#ffffff
+
+! Color scheme window
+rofi.color-window:                   #2f343f,#2f343f
+
+! Padding
+rofi.padding:                        200
+
+! Y-offset relative to location
+rofi.yoffset:                        -10
+
+! Terminal to use
+rofi.terminal:                       urxvt
+
+! Run command to execute
+rofi.run-command:                    {cmd}
+
+! Row height (in chars)
+rofi.eh:                             3
+
+! Do a more fuzzy matching
+rofi.fuzzy:                          true
+
+! Separator style (none, dash, solid)
+rofi.separator-style:                none
+
+! Hide scroll-bar
+rofi.hide-scrollbar:                 true
+

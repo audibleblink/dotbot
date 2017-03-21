@@ -1,0 +1,19 @@
+AllCops:
+  TargetRubyVersion: 2.2
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+
+Metrics/LineLength:
+  Max: 110
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+# Style/SpaceInsideHashLiteralBraces:
+#   EnforcedStyle: space
+#   EnforcedStyleForEmptyBraces: no_space
+#   SupportedStyles:
+#     - space
+#     - no_space
