@@ -1,0 +1,55 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.agignore: agignore
+    ~/.gitignore_global: gitignore_global
+    ~/.git_template: git_template
+    ~/.gnupg: gnupg
+    ~/.fonts: fonts
+    ~/.rubocop.yml: rubocop.yml
+    ~/.rspec: rspec
+    ~/.tmux.conf: tmux.conf
+    ~/.tmux: tmux
+    ~/.vim: vim
+    ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
+
+- tap:
+    - caskroom/fonts
+
+- brew:
+    - curl
+    - the_silver_searcher
+    - zsh
+    - git
+    - tmux
+    - vim
+    - ctags
+    - gnupg2
+    - tree
+    - rbenv
+
+- cask:
+    - vlc
+    - bettertouchtool
+    - font-fontawesome
+    - osxfuse
+    - dropbox
+    - sizeup
+    - 1password
+    - docker
+    - flux
+    - docker
+    - postman
+    - firefox
+    - chrome
+    - littlesnitch
+    - wireshark
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

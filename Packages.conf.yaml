@@ -1,0 +1,20 @@
+- apt-get:
+    - tree
+    - cmake
+    - ctags
+    - curl
+    - git
+    - openvpn
+    - p7zip-full
+    - pass
+    - pinentry-curses
+    - screenfetch
+    - scrot
+    - silversearcher-ag
+    - tmux
+    - tree
+    - tty-clock
+    - xbacklight
+    - xcape
+    - xclip
+    - zsh
