@@ -1,0 +1,7 @@
+vim/plugged/*
+tmux/resurrect/*
+gnupg/*
+!.gnupg/gpg.conf
+!.gnupg/gpg-agent.conf
+**/spell/*
+tmux/plugins/*
