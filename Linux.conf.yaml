@@ -20,6 +20,7 @@
       create: true
       path: gtk-3.0
     ~/.fonts: fonts
+    ~/.fzf.zsh: fzf.zsh
     ~/.gitignore_global: gitignore_global
     ~/.git_template: git_template
     ~/.gnupg: gnupg
@@ -34,6 +35,7 @@
 
 - shell:
   - ["git submodule update --init --recursive", Installing submodules]
+  - ["tic scripts/terminals/xterm-256color-italic.termino", Installing submodules]
   - ["wget -O ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Installing VimPlug]
   - 
      command: ["cat linux-packages.txt | xargs sudo apt-get install -y", Installing Packages]
