@@ -5,3 +5,4 @@ gnupg/*
 !.gnupg/gpg-agent.conf
 **/spell/*
 tmux/plugins/*
+!tmux/plugins/tpm
