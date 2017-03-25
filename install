@@ -11,9 +11,5 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-[[ "$OS" = "Linux" ]] && plug="dotbot-apt-get" || plug="dotbot-brew"
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -p "$plug" -c "${CONFIG}" "${@}"
-
-# [[ "$OS" = "Darwin" ]] && "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -p dotbot-brew -c "${CONFIG}" "${@}"
-# [[ "$OS" = "Linux"  ]] && "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -p dotbot-apt-get -c "${CONFIG}" "${@}"
-
+[[ "$OS" = "Darwin" ]] && plug="-p dotbot-brew/brew.py"
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" $plug -c "${CONFIG}" "${@}"

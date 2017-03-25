@@ -33,7 +33,6 @@
     - gnupg2
     - tree
     - rbenv
-    - encfs
 
 - cask:
     - vlc
@@ -48,10 +47,14 @@
     - docker
     - postman
     - firefox
-    - chrome
-    - littlesnitch
+    - google-chrome
+    - little-snitch
     - wireshark
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - ["wget -O ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Installing VimPlug]
+  - ["curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Installing VimPlug]
+  -
+     command: ["vim +PlugInstall +qa", Installing Packages]
+     stdin: true
+     stdout: true
