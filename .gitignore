@@ -6,3 +6,4 @@ gnupg/*
 **/spell/*
 tmux/plugins/*
 !tmux/plugins/tpm
+dotbot-brewc
