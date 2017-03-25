@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -e
+
+if [ "$(id -u)" -ne 0 ]; then
+  echo "run as root"
+  exit 0
+fi
+
+git clone --recursive https://github.com/thestinger/termite.git
+cd termite && make && sudo checkinstall --no-doc
+desktop-file-install termite.desktop
+mkdir -p /lib/terminfo/x
+ln -s /usr/local/share/terminfo/x/xterm-termite /lib/terminfo/x/xterm-termite
