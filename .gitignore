@@ -1,8 +1,8 @@
 vim/plugged/*
 tmux/resurrect/*
 gnupg/*
-!.gnupg/gpg.conf
-!.gnupg/gpg-agent.conf
+!gnupg/gpg.conf
+!gnupg/gpg-agent.conf
 **/spell/*
 tmux/plugins/*
 !tmux/plugins/tpm
