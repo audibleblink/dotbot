@@ -2,14 +2,14 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 [submodule "zsh-files/plugins/zsh-syntax-highlighting"]
-        path = zsh-files/plugins/zsh-syntax-highlighting
-        url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+	path = zsh-files/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "zsh-files/plugins/zsh-autopair"]
-        path = zsh-files/plugins/zsh-autopair
-        url = https://github.com/hlissner/zsh-autopair.git
+	path = zsh-files/plugins/zsh-autopair
+	url = https://github.com/hlissner/zsh-autopair.git
 [submodule "zsh-files/plugins/docker-zsh-completion"]
-        path = zsh-files/plugins/docker-zsh-completion
-        url = https://github.com/felixr/docker-zsh-completion.git
+	path = zsh-files/plugins/docker-zsh-completion
+	url = https://github.com/felixr/docker-zsh-completion.git
 [submodule "dotbot-brew"]
 	path = dotbot-brew
 	url = https://github.com/d12frosted/dotbot-brew.git
