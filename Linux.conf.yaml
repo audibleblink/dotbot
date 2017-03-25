@@ -5,7 +5,6 @@
 - clean: ['~']
 
 - link:
-    ~/.dotfiles: ''
     ~/.agignore: agignore
     ~/.config/i3: 
       create: true

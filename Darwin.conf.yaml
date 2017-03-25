@@ -5,7 +5,6 @@
 - clean: ['~']
 
 - link:
-    ~/.dotfiles: ''
     ~/.agignore: agignore
     ~/.gitignore_global: gitignore_global
     ~/.git_template: git_template
