@@ -1,0 +1,13 @@
+curl
+git
+gnupg2
+p7zip-full
+pinentry-curses
+silversearcher-ag
+tmux
+tree
+vim-gtk
+xbacklight
+xcape
+xclip
+zsh
