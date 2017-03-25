@@ -11,7 +11,11 @@
 	templatedir = ~/.git_template
 # [commit]
 # 	gpgsign = true
-[gpg]
-	program = /usr/local/bin/gpg2
 [alias]
 	pull = pull --rebase
+	remote = remote -v
+	branch = branch -v
+	commit = commit -v
+	status = status -s
+[include]
+        path = ~/.gitconfig_local

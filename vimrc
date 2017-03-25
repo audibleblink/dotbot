@@ -88,3 +88,11 @@ autocmd FocusLost,WinLeave * :silent! update
 autocmd CursorHold * checktime
 
 let &colorcolumn="100".join(range(100,999),",")
+
+" Loads a local config, if exists
+let $LOCALFILE=expand("~/.vimrc_local")
+if filereadable($LOCALFILE)
+    source $LOCALFILE
+endif
+
+

@@ -3,7 +3,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gpo="git push origin"
 alias gcm='git commit -m'
 alias gt='git tag'
-alias gst='git status -s'
+alias gst='git status'
 alias ga='git add'
 alias gcam='git commit -am'
 alias gr='git remote'
@@ -17,11 +17,6 @@ function gcln () {
   reponame=$(echo $url | awk -F/ '{print $NF}' | sed -e 's/.git$//')
   git clone $url $reponame
   cd $reponame
-}
-
-function ignore () {
-  input=$1
-  echo $input >> .gitignore
 }
 
 function gd() {

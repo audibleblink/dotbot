@@ -33,6 +33,7 @@
     - gnupg2
     - tree
     - rbenv
+    - encfs
 
 - cask:
     - vlc

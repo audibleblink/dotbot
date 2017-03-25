@@ -66,11 +66,6 @@ filetype plugin indent on
   " Layout
   let g:fzf_layout = { 'down': '~35%'  }
 
-" VimWiki
-  let g:vimwiki_list = [
-        \ {'path': '~/Dropbox/Notes/VimWiki/index.wiki'}
-  \]
-
 " EasyAlign
   " Start interactive EasyAlign in visual mode (e.g. vipga)
   xmap ga <Plug>(EasyAlign)
@@ -78,9 +73,6 @@ filetype plugin indent on
   nmap ga <Plug>(EasyAlign)
 
 " Ultisnips Configuration
-  " make YCM compatible with UltiSnips (using supertab)
-  let g:SuperTabDefaultCompletionType = '<C-n>'
-
   " better key bindings for UltiSnipsExpandTrigger
   let g:UltiSnipsEditSplit="vertical"
   let g:UltiSnipsExpandTrigger = "<tab>"

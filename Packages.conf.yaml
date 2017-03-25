@@ -2,6 +2,7 @@
     - tree
     - cmake
     - ctags
+    - encfs
     - curl
     - git
     - openvpn

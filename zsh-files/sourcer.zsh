@@ -2,18 +2,6 @@ PLUGINS=$ZSH_CUSTOM/plugins/
 COMPLETION_WAITING_DOTS="true"
 mkdir $ZSH &>/dev/null
 
-function zinstall {
-  cd $PLUGINS
-  git submodule add $1
-  zedit
-  git commit
-  cd -
-}
-
-function zupdate {
-  git submodule update --init --recursive
-}
-
 function is_plugin {
   local base_dir=$1
   local name=$2
