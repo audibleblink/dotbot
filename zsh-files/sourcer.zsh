@@ -19,7 +19,7 @@ fi
 
 # Reset fpath and add all defined plugins
 fpath=($(zsh -l -c 'echo $fpath'))
-for plugin ($plugins); do
+for plugin in $plugins; do
   if is_plugin $ZSH_CUSTOM $plugin; then
     fpath=($ZSH_CUSTOM/plugins/$plugin $fpath)
   fi
@@ -31,7 +31,7 @@ ZSH_COMPDUMP="${ZSH}/.zcompdump-${ZSH_VERSION}"
 compinit -i -d "${ZSH_COMPDUMP}"
 
 # Source the plugins declared in .zshrc
-for plugin ($plugins); do
-  local thing=$ZSH_CUSTOM/plugins/$plugin/$plugin.plugin.zsh
+for plugin in $plugins; do
+  thing=$ZSH_CUSTOM/plugins/$plugin/$plugin.plugin.zsh
   [ -f $thing ] && source $thing
 done
