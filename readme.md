@@ -1,7 +1,4 @@
-#dotfiles
-
-![](http://i.imgur.com/iip2LPT.png)
-![](http://i.imgur.com/hWq2u5T.jpg)
+# dotfiles
 
 ### Installation
 Clone to `~/.dotfiles`
@@ -16,6 +13,14 @@ Run the install script
 cd ~/.dotfiles
 ./install
 ```
+
+### Screenshots
+
+![](http://i.imgur.com/iip2LPT.png)
+
+![](http://i.imgur.com/hWq2u5T.jpg)
+
+
 
 ### Post-Install
 
