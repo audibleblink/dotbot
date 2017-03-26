@@ -14,13 +14,13 @@ function ccopy() {
       cat $file > /dev/clipboard
     fi
   else
-    if which xclip &>/dev/null; then
+    if type &>/dev/null xclip &>/dev/null; then
       if [[ -z $file ]]; then
         xclip -in -selection clipboard
       else
         xclip -in -selection clipboard $file
       fi
-    elif which xsel &>/dev/null; then
+    elif type &>/dev/null xsel &>/dev/null; then
       if [[ -z $file ]]; then
         xsel --clipboard --input 
       else
@@ -40,9 +40,9 @@ function cpaste() {
   elif [[ $OSTYPE == cygwin* ]]; then
     cat /dev/clipboard
   else
-    if which xclip &>/dev/null; then
+    if type &>/dev/null xclip &>/dev/null; then
       xclip -out -selection clipboard
-    elif which xsel &>/dev/null; then
+    elif type &>/dev/null xsel &>/dev/null; then
       xsel --clipboard --output
     else
       print "clipcopy: Platform $OSTYPE not supported or xclip/xsel not installed" >&2

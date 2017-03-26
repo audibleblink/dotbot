@@ -26,9 +26,9 @@ PROMPT2='%{$fg[$CARETCOLOR]%}◀%{$reset_color%} '
 
 setopt prompt_subst
 
-local _current_dir="%{$fg[blue]%}%3~%{$reset_color%} "
-local _return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
-local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
+_current_dir="%{$fg[blue]%}%3~%{$reset_color%} "
+_return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
+_hist_no="%{$fg[grey]%}%h%{$reset_color%}"
 
 function parse_git_dirty() {
   local STATUS=''

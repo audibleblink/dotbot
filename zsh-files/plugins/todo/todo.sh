@@ -1186,7 +1186,7 @@ case $action in
         actionUsage "$@"
     else
         if [ -t 1 ] ; then # STDOUT is a TTY
-            if which "${PAGER:-less}" >/dev/null 2>&1; then
+            if type &>/dev/null "${PAGER:-less}" >/dev/null 2>&1; then
                 # we have a working PAGER (or less as a default)
                 help | "${PAGER:-less}" && exit 0
             fi
@@ -1197,7 +1197,7 @@ case $action in
 
 "shorthelp" )
     if [ -t 1 ] ; then # STDOUT is a TTY
-        if which "${PAGER:-less}" >/dev/null 2>&1; then
+        if type &>/dev/null "${PAGER:-less}" >/dev/null 2>&1; then
             # we have a working PAGER (or less as a default)
             shorthelp | "${PAGER:-less}" && exit 0
         fi
