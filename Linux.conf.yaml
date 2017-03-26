@@ -20,6 +20,7 @@
       path: gtk-3.0
     ~/.fonts: fonts
     ~/.fzf.zsh: fzf.zsh
+    ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.git_template: git_template
     ~/.gnupg: gnupg
