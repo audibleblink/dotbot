@@ -1,6 +1,6 @@
 # Set SSH to use gpg-agent
 unset SSH_AGENT_PID
-export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh
+export SSH_AUTH_SOCK=/run/user/"$(id -u)"/gnupg/S.gpg-agent.ssh
 
 # Start the gpg-agent if not already running
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then

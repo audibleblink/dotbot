@@ -1,15 +1,15 @@
-alias fml='e -O $( git diff --name-only | uniq )' # Open all merge conflicts
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gpo="git push origin"
-alias gcm='git commit -m'
-alias gt='git tag'
-alias gst='git status'
+alias gb='git bra'
+alias gcm='git com -m'
+alias gc='git com'
+alias gcam='git com -am'
+alias gst='git sta'
 alias ga='git add'
-alias gcam='git commit -am'
-alias gr='git remote'
-alias gb='git branch'
+alias gr='git rem'
+alias gt='git tag'
 alias gco='git checkout'
-alias gc='git commit'
+alias gpo="git push origin"
+alias fml='e -O $( git diff --name-only | uniq )' # Open all merge conflicts
 
 # clone a repo and cd into it
 function gcln () {
@@ -18,12 +18,3 @@ function gcln () {
   git clone $url $reponame
   cd $reponame
 }
-
-function gd() {
-  if type diff-so-fancy >/dev/null; then
-    git diff --color "$@" | diff-so-fancy | less
-  else
-    git diff "$@"
-  fi
-}
-

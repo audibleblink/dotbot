@@ -7,10 +7,15 @@ alias nyanspec='rspec spec --format NyanCatFormatter'
 alias rubytags='ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)'
 alias die='pgrep spring | xargs kill -9 &&  pgrep ruby | xargs kill -9'
 
-which rbenv &>/dev/null && eval "$(rbenv init --no-rehash - zsh)"
-
+type rbenv &>/dev/null && eval "$(rbenv init --no-rehash - zsh)"
 
 ###############
 # JavaScript
 ###############
 alias asi='find . -not -iwholename "*node_modules*" -type f -name *.js | xargs fixmyjs --legacy'
+
+###############
+# Go
+###############
+alias gr='go run'
+alias gb='go build'

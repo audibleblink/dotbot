@@ -28,10 +28,7 @@ alias la='ls -lAh'
 alias l='ls -lth'
 alias ls='ls -FGh'
 
-alias desktop='cd ~/Desktop'
-alias dot='cd ~/.dotfiles'
-
-which tree >/dev/null && alias tree='LS_COLORS="di=34:ln=35:so=32;40:ex=31" tree'
+type tree &>/dev/null && alias tree='LS_COLORS="di=34:ln=35:so=32;40:ex=31" tree'
 
 # mkdir, cd into it
 mkcd () {

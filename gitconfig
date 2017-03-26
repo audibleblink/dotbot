@@ -3,19 +3,25 @@
 	name = Alex Flores
 	email = domain@me.com
 	signingkey = F81642CB
+
 [core]
 	excludesfile = ~/.gitignore_global
+
 [github]
 	user = audibleblink
+
 [init]
 	templatedir = ~/.git_template
+
 # [commit]
 # 	gpgsign = true
+
 [alias]
-	pull = pull --rebase
-	remote = remote -v
-	branch = branch -v
-	commit = commit -v
-	status = status -s
+	pul = pull --rebase
+	rem = remote -v
+	bra = branch -v
+	com = commit -v
+	sta = status -s
+
 [include]
         path = ~/.gitconfig_local
