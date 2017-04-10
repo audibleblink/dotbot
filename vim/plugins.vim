@@ -3,9 +3,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -15,7 +13,6 @@ Plug 'kana/vim-textobj-user'
 Plug 'maralla/completor.vim'
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-endwise'
@@ -28,6 +25,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'suan/vim-instant-markdown',      { 'for': 'markdown' }
 
 Plug 'chrisbra/vim-zsh',               { 'for': 'zsh' }
+Plug 'fatih/vim-go',                   { 'for': 'go' }
 Plug 'freitass/todo.txt-vim',          { 'for': 'txt' }
 Plug 'mattn/emmet-vim',                { 'for': ['html', 'javascript.jsx'] }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
@@ -40,6 +38,9 @@ filetype plugin indent on
 
 " Instant Markdown
   let g:instant_markdown_autostart = 0
+
+" Go Completor
+  let g:completor_gocode_binary = 'gocode'
 
 " Colorscheme
   syntax on
@@ -71,10 +72,3 @@ filetype plugin indent on
   xmap ga <Plug>(EasyAlign)
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
-
-" Ultisnips Configuration
-  " better key bindings for UltiSnipsExpandTrigger
-  let g:UltiSnipsEditSplit="vertical"
-  let g:UltiSnipsExpandTrigger = "<tab>"
-  let g:UltiSnipsJumpForwardTrigger = "<tab>"
-  let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"

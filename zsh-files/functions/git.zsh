@@ -7,6 +7,7 @@ alias gst='git sta'
 alias ga='git add'
 alias gr='git rem'
 alias gt='git tag'
+alias gd='git diff'
 alias gco='git checkout'
 alias gpo="git push origin"
 alias fml='e -O $( git diff --name-only | uniq )' # Open all merge conflicts
