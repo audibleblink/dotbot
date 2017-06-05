@@ -21,6 +21,9 @@
     ~/.config/i3blocks/config:
       create: true
       path: i3/.i3blocks.conf
+    ~/.config/compton/config:
+      create: true
+      path: i3/.compton.conf
     ~/.fonts: fonts
     ~/.fzf.zsh: fzf.zsh
     ~/.gitconfig: gitconfig
