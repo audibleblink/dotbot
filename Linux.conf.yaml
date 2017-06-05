@@ -18,6 +18,9 @@
     ~/.config/gtk-3.0:
       create: true
       path: gtk-3.0
+    ~/.config/i3blocks/config:
+      create: true
+      path: i3/.i3blocks.conf
     ~/.fonts: fonts
     ~/.fzf.zsh: fzf.zsh
     ~/.gitconfig: gitconfig
