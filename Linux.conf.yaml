@@ -12,6 +12,9 @@
     ~/.config/rofi:
       create: true
       path: rofi
+    ~/.config/dunst:
+      create: true
+      path: dunst
     ~/.config/termite:
       create: true
       path: termite

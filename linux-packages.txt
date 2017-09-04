@@ -1,4 +1,5 @@
 curl
+dunst
 git
 gnupg2
 p7zip-full
