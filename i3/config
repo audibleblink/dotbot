@@ -171,8 +171,7 @@ smart_gaps on
   exec --no-startup-id xfce4-clipman
 
   exec --no-startup-id "spotify --force-device-scale-factor=1.5"
-  exec --no-startup-id slack
-  exec --no-startup-id franz
+  exec --no-startup-id rambox
   exec --no-startup-id firefox
   exec --no-startup-id compton -f
 

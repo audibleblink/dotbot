@@ -44,12 +44,12 @@
 
 - shell:
   - ["git submodule update --init --recursive", Installing submodules]
-  - ["tic scripts/terminals/xterm-256color-italic.termino", Installing submodules]
+  - ["tic scripts/terminals/xterm-256color-italic.terminfo", Installing terminfo]
   - ["wget -O ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Installing VimPlug]
   - 
      command: ["cat linux-packages.txt | xargs sudo apt-get install -y", Installing Packages]
      stdout: true
   - 
-     command: ["vim +PlugInstall +qa", Installing Packages]
+     command: ["vim +PlugInstall +qa", Installing vim plugins]
      stdin: true
      stdout: true
