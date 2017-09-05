@@ -12,6 +12,9 @@
     ~/.config/rofi:
       create: true
       path: rofi
+    ~/.config/qutebrowser:
+      create: true
+      path: qutebrowser
     ~/.config/dunst:
       create: true
       path: dunst
