@@ -44,6 +44,9 @@
     ~/.vimrc: vimrc
     ~/.Xresources: Xresources
     ~/.zshrc: zshrc
+    /usr/local/bin/:
+      create: true
+      path: umpv
 
 - shell:
   - ["git submodule update --init --recursive", Installing submodules]

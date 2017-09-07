@@ -2,6 +2,7 @@ curl
 dunst
 git
 gnupg2
+mpv
 p7zip-full
 pinentry-curses
 silversearcher-ag
