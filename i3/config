@@ -114,9 +114,8 @@
   bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # Program Workspace Assignments
-  assign [class="firefox"] $workspace1
-  assign [class="Franz"] $workspace8
-  assign [class="Slack"] $workspace9
+  assign [class="qutebrowser"] $workspace1
+  assign [class="Rambox"] $workspace8
   assign [class="Spotify"] $workspace10
 
 # Default to Floating
@@ -172,7 +171,7 @@ smart_gaps on
 
   exec --no-startup-id "spotify --force-device-scale-factor=1.5"
   exec --no-startup-id rambox
-  exec --no-startup-id firefox
+  exec --no-startup-id qutebrowser --backend webengine
   exec --no-startup-id compton -f
 
 # Keyboard
