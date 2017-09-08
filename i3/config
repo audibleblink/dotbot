@@ -173,6 +173,7 @@ smart_gaps on
   exec --no-startup-id rambox
   exec --no-startup-id qutebrowser --backend webengine
   exec --no-startup-id compton -f
+  exec --no-startup-id dunst
 
 # Keyboard
   exec_always setxkbmap -option "altwin:swap_lalt_lwin"
