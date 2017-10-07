@@ -1,0 +1,61 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.agignore: agignore
+    ~/.config/i3: 
+      create: true
+      path: i3
+    ~/.config/rofi:
+      create: true
+      path: rofi
+    ~/.config/qutebrowser:
+      create: true
+      path: qutebrowser
+    ~/.config/dunst:
+      create: true
+      path: dunst
+    ~/.config/termite:
+      create: true
+      path: termite
+    ~/.config/gtk-3.0:
+      create: true
+      path: gtk-3.0
+    ~/.config/i3blocks/config:
+      create: true
+      path: i3/.i3blocks.conf
+    ~/.config/compton/config:
+      create: true
+      path: i3/.compton.conf
+    ~/.fonts: fonts
+    ~/.fzf.zsh: fzf.zsh
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    ~/.git_template: git_template
+    ~/.gnupg: gnupg
+    ~/.rubocop.yml: rubocop.yml
+    ~/.rspec: rspec
+    ~/.tmux.conf: tmux.conf
+    ~/.tmux: tmux
+    ~/.vim: vim
+    ~/.vimrc: vimrc
+    ~/.Xresources: Xresources
+    ~/.zshrc: zshrc
+    /usr/local/bin/:
+      create: true
+      path: umpv
+
+- shell:
+  - ["git submodule update --init --recursive", Installing submodules]
+  - ["tic scripts/terminals/xterm-256color-italic.terminfo", Installing terminfo]
+  - ["wget -O ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Installing VimPlug]
+  - 
+     command: ["cat linux-packages.txt | xargs sudo pacman -S", Installing Packages]
+     stdout: true
+  - 
+     command: ["vim +PlugInstall +qa", Installing vim plugins]
+     stdin: true
+     stdout: true
