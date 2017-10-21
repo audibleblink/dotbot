@@ -57,7 +57,7 @@ filetype plugin indent on
   let g:rspec_command = "VtrSendCommandToRunner! zeus rspec {spec}"
 
 " VimWiki
-  let g:vimwiki_list = [{'path': '~/Private/VimWiki/index.wiki'}]
+  let g:vimwiki_list = [{'path': '~/private/VimWiki/index.wiki'}]
 
 " Tmux Navigator
   " Send :update when leaving vim for tmux

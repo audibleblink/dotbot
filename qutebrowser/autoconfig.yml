@@ -35,6 +35,9 @@ global:
   colors.statusbar.url.success.http.fg: white
   colors.tabs.even.bg: '#2d2d2d'
   colors.tabs.even.fg: white
+  colors.tabs.indicator.error: '#ff0000'
+  colors.tabs.indicator.start: '#0000aa'
+  colors.tabs.indicator.stop: '#00aa00'
   colors.tabs.odd.bg: '#2d2d2d'
   colors.tabs.odd.fg: white
   colors.tabs.selected.even.bg: white
@@ -42,19 +45,28 @@ global:
   colors.tabs.selected.odd.bg: white
   colors.tabs.selected.odd.fg: '#2d2d2d'
   colors.webpage.bg: white
+  content.proxy: system
   downloads.position: bottom
   editor.command:
   - termite
   - -e
   - vim
   - '{}'
+  fonts.completion.category: 8pt monospace
   fonts.completion.entry: 8pt monospace
+  fonts.debug_console: 8pt monospace
+  fonts.hints: 8pt monospace
   fonts.monospace: '"Hack", Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera
     Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace,
     Fixed, Consolas, Terminal'
-  fonts.tabs: 10pt monospace
+  fonts.tabs: 8pt monospace
   fonts.web.family.standard: null
   scrolling.smooth: true
+  tabs.indicator_padding:
+    bottom: 1
+    left: 0
+    right: 10
+    top: 1
   tabs.last_close: close
   tabs.padding:
     bottom: 10
@@ -62,6 +74,11 @@ global:
     right: 10
     top: 10
   tabs.position: top
+  tabs.title.format: '{title}'
+  tabs.title.format_pinned: '{index}'
+  tabs.width.bar: 15%
+  tabs.width.indicator: 0
+  tabs.wrap: true
   url.searchengines:
     DEFAULT: https://duckduckgo.com/?q=g!+{}
     git: https://github.com/search?q={}
