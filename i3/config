@@ -37,6 +37,7 @@
 # Set orientation of next split
   bindsym $mod+minus split v
   bindsym $mod+backslash split h
+
 # Program Settings
   bindsym $mod+Return exec termite
   bindsym $mod+d exec rofi -show run
@@ -44,11 +45,14 @@
   bindsym $mod+g exec scrot ~/Dropbox/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png -e 'imgur $f'
   bindsym --release $mod+Shift+g exec scrot -s /home/red/Dropbox/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png -e 'imgur $f && notify-send scrot "URL Copied"'
   # bindsym --release $mod+Shift+g exec scrot -s /home/red/Dropbox/Blogs/security/content/post/troll2_walkthrough/images/Screenshot%Y-%m-%d%H:%M:%S.png -e 'echo $f' | xclip -in -selection clipboard
+
 # exit i3 (logs you out of your X session)
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
 # Restart-Related Bindings
   bindsym $mod+Shift+c reload
   bindsym $mod+Shift+r restart
+
 # change container layout
   bindsym $mod+s layout stacking
   bindsym $mod+w layout tabbed
@@ -80,16 +84,16 @@
   }
 
 # Workspace-Related Bindings
-  set $workspace1 "1: "
-  set $workspace2 "2: "
-  set $workspace3 "3: "
-  set $workspace4 "4: "
-  set $workspace5 "5: "
-  set $workspace6 "6: "
-  set $workspace7 "7: "
-  set $workspace8 "8: "
-  set $workspace9 "9: "
-  set $workspace10 "10: "
+  set $workspace1 ""
+  set $workspace2 ""
+  set $workspace3 ""
+  set $workspace4 ""
+  set $workspace5 "5"
+  set $workspace6 "6"
+  set $workspace7 "7"
+  set $workspace8 "8"
+  set $workspace9 "9"
+  set $workspace10 ""
 
   bindsym $mod+1 workspace $workspace1
   bindsym $mod+2 workspace $workspace2
@@ -120,31 +124,14 @@
 
 # Default to Floating
   for_window [class="Lxappearance"] floating enable
-  for_window [class="Seahorse"] floating enable
   for_window [class="Pavucontrol"] floating enable
-
 
 gaps inner 10
 gaps outer 1
 smart_gaps on 
 
 # i3 Status Bar
-  bar {
-    font pango: Source Code Pro, FontAwesome 8
-      position top
-      # status_command polybar laptop
-      status_command i3blocks
-      colors {
-        separator $base03
-        background $base01
-        statusline $base05
-#                          border  background text
-        focused_workspace  $base01 $base01    $base07
-        active_workspace   $base01 $base02    $base03
-        inactive_workspace $base01 $base01    $base03
-        urgent_workspace   $base01 $base01    $base08
-      }
-  }
+  exec --no-startup-id polybar Bar
 
 # Pulse Audio controls
   bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10% #increase sound volume
@@ -165,13 +152,13 @@ smart_gaps on
 # Startup
   exec_always --no-startup-id xrandr --dpi 180
   exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/.wallpaper.jpg
-  exec --no-startup-id "dropbox start"
-  exec --no-startup-id "xfce-power-manager"
-  exec --no-startup-id xfce4-clipman
 
-  exec --no-startup-id "spotify --force-device-scale-factor=1.5"
-  exec --no-startup-id rambox
-  exec --no-startup-id qutebrowser --backend webengine
+  exec --no-startup-id dropbox start
+  exec --no-startup-id xfce-power-manager
+  exec --no-startup-id xfce4-clipman
+  exec --no-startup-id xautolock -time 10 -locker "lock"
+  exec --no-startup-id xautolock -time 15 -locker "systemctl suspend"
+  exec --no-startup-id redshift -l 40.7218:-74.0447 -t 6500:2500
   exec --no-startup-id compton -f
   exec --no-startup-id dunst
 
