@@ -9,6 +9,9 @@
     ~/.config/i3: 
       create: true
       path: i3
+    ~/.config/polybar:
+      create: true
+      path: polybar
     ~/.config/rofi:
       create: true
       path: rofi
