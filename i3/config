@@ -84,16 +84,16 @@
   }
 
 # Workspace-Related Bindings
-  set $workspace1 ""
-  set $workspace2 ""
-  set $workspace3 ""
-  set $workspace4 ""
-  set $workspace5 "5"
-  set $workspace6 "6"
-  set $workspace7 "7"
-  set $workspace8 "8"
-  set $workspace9 "9"
-  set $workspace10 ""
+  set $workspace1 1
+  set $workspace2 2
+  set $workspace3 3
+  set $workspace4 4
+  set $workspace5 5
+  set $workspace6 6
+  set $workspace7 7
+  set $workspace8 8
+  set $workspace9 9
+  set $workspace10 0
 
   bindsym $mod+1 workspace $workspace1
   bindsym $mod+2 workspace $workspace2
@@ -130,9 +130,6 @@ gaps inner 10
 gaps outer 1
 smart_gaps on 
 
-# i3 Status Bar
-  exec --no-startup-id polybar Bar
-
 # Pulse Audio controls
   bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10% #increase sound volume
   bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10% #decrease sound volume
@@ -156,11 +153,12 @@ smart_gaps on
   exec --no-startup-id dropbox start
   exec --no-startup-id xfce-power-manager
   exec --no-startup-id xfce4-clipman
-  exec --no-startup-id xautolock -time 10 -locker "lock"
+  exec --no-startup-id xautolock -time 10 -locker "~/.config/i3/.scripts/lock"
   exec --no-startup-id xautolock -time 15 -locker "systemctl suspend"
   exec --no-startup-id redshift -l 40.7218:-74.0447 -t 6500:2500
   exec --no-startup-id compton -f
   exec --no-startup-id dunst
+  exec --no-startup-id polybar Bar
 
 # Keyboard
   exec_always setxkbmap -option "altwin:swap_lalt_lwin"
