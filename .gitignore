@@ -7,3 +7,5 @@ gnupg/*
 tmux/plugins/*
 !tmux/plugins/tpm
 dotbot-brewc
+quickmarks
+qutebrowser/quickmarks

@@ -27,9 +27,9 @@
     ~/.config/gtk-3.0:
       create: true
       path: gtk-3.0
-    ~/.config/i3blocks/config:
+    ~/.config/i3blocks:
       create: true
-      path: i3/.i3blocks.conf
+      path: i3blocks
     ~/.config/compton/config:
       create: true
       path: i3/.compton.conf
