@@ -11,6 +11,8 @@
 #define t_aqua	        	#66cccc
 #define t_blue	        	#6699cc
 #define t_purple        	#cc99cc
+#define t_transparent        	#2f343f
+#define t_white        	        #ffffff
 
 
 *.foreground:   t_foreground
@@ -49,3 +51,29 @@
 ! Light Grey (Selection) + White (Current Line)
 *.color7:       #ffffff
 *.color15:      #ffffff
+!
+
+!States: bg, fg, bgalt, hlbg, hlfg
+rofi.color-normal:                   t_transparent,t_foreground,t_transparent,t_transparent,#f99157
+rofi.color-active:                   t_transparent,#0000ff,t_transparent,t_orange,t_white
+rofi.color-window:                   t_transparent,t_transparent
+
+rofi.color-enabled: true
+rofi.fuzzy: true
+rofi.dpi: 220
+rofi.hide-scrollbar: true
+rofi.states: background, border
+rofi.separator-style: solid
+rofi.eh: 1
+rofi.bw: 4
+rofi.columns: 1
+rofi.padding: 50
+rofi.line-margin: 35
+rofi.xoffset: 0
+rofi.yoffset: 350
+rofi.opacity: 100
+rofi.location: 2
+rofi.width: 66
+rofi.font: Source Sans Pro 12
+rofi.lines: 4
+rofi.border-radius: 8
