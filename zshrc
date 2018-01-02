@@ -10,7 +10,7 @@ plugins=(
   docker-zsh-completion
   gpg
   zsh-autopair
-  fuck
+  # fuck
   fzf
   todo
   #must be last
@@ -28,8 +28,6 @@ alias vedit="e ~/.vimrc"
 alias tedit="e ~/.tmux.conf"
 alias bedit="e ~/.vim/plugins.vim"
 alias reload="source ~/.zshrc"
-
-# Temp aliases
 
 # necessary when using Termite
 [ "$TERM" = "xterm-termite" ] && alias ssh="TERM=screen-256color ssh"

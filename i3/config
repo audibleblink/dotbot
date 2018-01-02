@@ -171,7 +171,7 @@ smart_gaps on
   exec --no-startup-id xfce-power-manager
   exec --no-startup-id xfce4-clipman
   exec --no-startup-id xautolock -time 10 -locker "~/.config/i3/.scripts/lock"
-  exec --no-startup-id xautolock -time 15 -locker "systemctl suspend"
+  exec --no-startup-id xautolock -time 30 -locker "systemctl suspend"
   exec --no-startup-id redshift -l 40.7218:-74.0447 -t 6500:2500
   exec --no-startup-id compton -f
   exec --no-startup-id dunst
