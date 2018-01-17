@@ -12,6 +12,7 @@
 # The color will gradually change for a percentage below 85%, and the urgency
 # (exit code 33) is set if there is less that 5% remaining.
 
+use open ':std', ':encoding(UTF-8)';
 use strict;
 use warnings;
 use utf8;
@@ -37,16 +38,23 @@ $status = $1;
 $percent = $2;
 $full_text = "$percent%";
 
-if ($status eq 'Discharging') {
-  $full_text .= ' ';
-} elsif ($status eq 'Charging') {
-  $full_text .= ' ';
-}
-
 $short_text = $full_text;
 
 if ($acpi =~ /(\d\d:\d\d):/) {
   $full_text .= " ($1)";
+}
+
+
+if ($percent < 20) {
+  print " ";
+} elsif ($percent < 40) {
+  print " ";
+} elsif ($percent < 60) {
+  print " ";
+} elsif ($percent < 85) {
+  print " ";
+} elsif ($percent < 100) {
+  print " ";
 }
 
 # print text
@@ -55,7 +63,6 @@ print "$short_text\n";
 
 # consider color and urgent flag only on discharge
 if ($status eq 'Discharging') {
-
   if ($percent < 20) {
     print "#f2777a\n";
   } elsif ($percent < 40) {
@@ -63,6 +70,8 @@ if ($status eq 'Discharging') {
   } elsif ($percent < 60) {
     print "#99cc99\n";
   } elsif ($percent < 85) {
+    print "#99cc99\n";
+  } elsif ($percent < 100) {
     print "#99cc99\n";
   }
 

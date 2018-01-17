@@ -1,0 +1,5 @@
+#!/bin/bash
+icon=
+vpn=$(ps ax | grep -oP "\K\S+\.private[i]nternetaccess" | cut -d '.' -f 1)
+
+[[ $vpn ]] && echo "${icon} ${vpn}"

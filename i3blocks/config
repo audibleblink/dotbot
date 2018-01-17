@@ -1,10 +1,10 @@
 command=~/.config/i3blocks/blocks/$BLOCK_NAME
 
 markup=pango
-full_text=    
+full_text=  
 align=center
 separator=false
-separator_block_width=10
+separator_block_width=5
 
 #[song]
 #label=
@@ -20,14 +20,19 @@ separator_block_width=10
 #label=
 #color=#C9CCDB
 
+[vpn]
+interval=5
+
+[separator]
+
 [load]
 interval=5
-label=
+label=
 
 [separator]
 
 [memory]
-label=
+label=•   
 instance=mem;used
 interval=30
 
@@ -47,12 +52,11 @@ interval=10
 [separator]
 
 [date]
-command=echo "<span color='black' background='#f99170'>    `date +"%a, %d %b %I:%M"`  </span>"
+command=echo "<span  weight='ultralight' color='black' background='#f99170'>    `date +"%a, %d %b %I:%M"`  </span>"
 interval=2
 
 [separator]
 
 [battery]
 interval=60
-label=
 
