@@ -54,14 +54,14 @@
 !
 
 !States: bg, fg, bgalt, hlbg, hlfg
-rofi.color-normal:                   t_transparent,t_foreground,t_transparent,t_transparent,#f99157
-rofi.color-active:                   t_transparent,#0000ff,t_transparent,t_orange,t_white
-rofi.color-window:                   t_transparent,t_transparent
+rofi.color-normal:   t_transparent,t_foreground,t_transparent,t_transparent,#f99157
+rofi.color-active:   t_transparent,#0000ff,t_transparent,t_orange,t_white
 
 rofi.color-enabled: true
 rofi.fuzzy: true
 rofi.dpi: 220
 rofi.hide-scrollbar: true
+rofi.color-window:                   t_transparent,t_orange
 rofi.states: background, border
 rofi.separator-style: solid
 rofi.eh: 1
