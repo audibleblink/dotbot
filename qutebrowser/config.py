@@ -184,7 +184,7 @@ c.scrolling.smooth = True
 
 # Padding for tab indicators
 # Type: Padding
-c.tabs.indicator_padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 10}
+c.tabs.indicator.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 10}
 
 # Behavior when the last tab is closed.
 # Type: String

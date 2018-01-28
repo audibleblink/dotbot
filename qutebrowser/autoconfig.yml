@@ -3,4 +3,13 @@
 
 config_version: 1
 global:
-  content.proxy: system
+  bindings.commands:
+    normal:
+      J: tab-prev
+      K: tab-next
+      X: undo
+      d: scroll-page 0 0.5
+      gp: pocket
+      u: scroll-page 0 -0.5
+      x: tab-close
+  zoom.default: 150%
