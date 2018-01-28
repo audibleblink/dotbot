@@ -9,3 +9,4 @@ tmux/plugins/*
 dotbot-brewc
 quickmarks
 qutebrowser/quickmarks
+qutebrowser/qsettings/QtProject.conf
