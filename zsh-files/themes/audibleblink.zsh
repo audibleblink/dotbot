@@ -31,12 +31,8 @@ _return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
 _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
 
 function parse_git_dirty() {
-  local STATUS=''
-  local FLAGS=('--porcelain' '--ignore-submodules=dirty' )
-  if [[ "$DISABLE_UNTRACKED_FILES_DIRTY" == "true" ]]; then
-    FLAGS+='--untracked-files=no'
-  fi
-  STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
+  local FLAGS=('--porcelain' '--ignore-submodules=dirty' '--untracked-files=no')
+  local STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
   if [[ -n $STATUS ]]; then
     echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
   else
@@ -45,6 +41,7 @@ function parse_git_dirty() {
 }
 
 function git_prompt_info() {
+  [[ -d .git ]] || return 0
   local ref
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
     ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
@@ -72,6 +69,7 @@ function _vi_status() {
 # use a neutral color, otherwise colors will vary according to time.
 function _git_time_since_commit() {
   # Only proceed if there is actually a commit.
+  [[ -d .git ]] || return 0
   if git log -1 > /dev/null 2>&1; then
     # Get the last commit.
     last_commit=$(git log --pretty=format:'%at' -1 2> /dev/null)
