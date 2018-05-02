@@ -41,10 +41,9 @@
 # Program Settings
   bindsym $mod+Return exec termite
   bindsym $mod+d exec rofi -show run
-  bindsym $mod+p exec $HOME/.config/i3/.scripts/lock -p 10
-  bindsym $mod+g exec scrot ~/Dropbox/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png -e 'imgur $f'
-  bindsym --release $mod+Shift+g exec scrot -s /home/red/Dropbox/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png -e 'imgur $f && notify-send scrot "URL Copied"'
-  # bindsym --release $mod+Shift+g exec scrot -s /home/red/Dropbox/Blogs/security/content/post/troll2_walkthrough/images/Screenshot%Y-%m-%d%H:%M:%S.png -e 'echo $f' | xclip -in -selection clipboard
+  bindsym $mod+p exec betterlockscreen -l dim
+  bindsym $mod+g exec scrot ~/Dropbox/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png -e 'viewnior $f'
+  bindsym --release $mod+Shift+g exec scrot -s ~/Dropbox/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png -e 'viewnior $f'
 
 # exit i3 (logs you out of your X session)
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -145,9 +144,9 @@ bar {
   for_window [class="Lxappearance"] floating enable
   for_window [class="Pavucontrol"] floating enable
 
-gaps inner 10
+gaps inner 30
 gaps outer 1
-smart_gaps on
+# smart_gaps on
 
 # Pulse Audio controls
   bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10% #increase sound volume
@@ -168,14 +167,14 @@ smart_gaps on
 # Startup
   exec_always --no-startup-id xrandr --dpi 180
   exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/.wallpaper.jpg
+  exec_always --no-startup-id compton --config ~/.config/compton/config
 
   exec --no-startup-id dropbox start
-  exec --no-startup-id xfce-power-manager
+  exec --no-startup-id xfce4-power-manager
   exec --no-startup-id xfce4-clipman
-  exec --no-startup-id xautolock -time 10 -locker "~/.config/i3/.scripts/lock"
-  exec --no-startup-id xautolock -time 30 -locker "systemctl suspend"
+  exec --no-startup-id xautolock -time 10 -notify 2 -locker "betterlockscreen -l dimblur"
+  exec --no-startup-id xautolock -time 30 -notify 2 -locker "betterlockscreen -s"
   exec --no-startup-id redshift -l 40.7218:-74.0447 -t 6500:2500
-  exec --no-startup-id compton -f
   exec --no-startup-id dunst
 
 # Keyboard
