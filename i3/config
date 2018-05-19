@@ -20,7 +20,7 @@
   set $base0F #fcc09e
   set $border #f99157
 
-# Widow Colours
+# Window Colours
 #                         border  background text    indicator
   client.focused          $base01 $border    $base07 $base0F
   client.focused_inactive $base02 $base02    $base03 $base0F
@@ -83,7 +83,7 @@
   }
 
 # Workspace-Related Bindings
-  set $workspace1  "1:      "
+  set $workspace1  "1:      "
   set $workspace2  "2:      "
   set $workspace3  "3:      "
   set $workspace4  "4:      "
@@ -144,7 +144,7 @@ bar {
   for_window [class="Lxappearance"] floating enable
   for_window [class="Pavucontrol"] floating enable
 
-gaps inner 30
+gaps inner 15
 gaps outer 1
 # smart_gaps on
 
@@ -172,10 +172,10 @@ gaps outer 1
   exec --no-startup-id dropbox start
   exec --no-startup-id xfce4-power-manager
   exec --no-startup-id xfce4-clipman
-  exec --no-startup-id xautolock -time 10 -notify 2 -locker "betterlockscreen -l dimblur"
-  exec --no-startup-id xautolock -time 30 -notify 2 -locker "betterlockscreen -s"
+  exec --no-startup-id xautolock -time 10 -notify 2 -locker "betterlockscreen -l dim"
   exec --no-startup-id redshift -l 40.7218:-74.0447 -t 6500:2500
   exec --no-startup-id dunst
+  exec --no-startup-id cmst
 
 # Keyboard
   exec_always setxkbmap -option "altwin:swap_lalt_lwin"

@@ -14,6 +14,7 @@ plugins=(
   fzf
   todo
   vagrant
+  # coding
   #must be last
   history-substring-search
   zsh-syntax-highlighting
