@@ -15,6 +15,7 @@ plugins=(
   todo
   vagrant
   # coding
+  # pentest
   #must be last
   history-substring-search
   zsh-syntax-highlighting
@@ -36,4 +37,5 @@ alias reload="source ~/.zshrc"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
+[ -d ~/.go ] && export GOPATH=${HOME}/.go && export PATH=${PATH}:${GOPATH}/bin
 
