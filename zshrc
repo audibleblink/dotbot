@@ -13,6 +13,7 @@ plugins=(
   # fuck
   fzf
   todo
+  vagrant
   #must be last
   history-substring-search
   zsh-syntax-highlighting
