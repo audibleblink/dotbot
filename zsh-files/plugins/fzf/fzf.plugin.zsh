@@ -2,7 +2,8 @@
 if [[ -f $HOME/.fzf.zsh ]]; then
   # source fzf if it's installed
   source $HOME/.fzf.zsh
-  export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+  export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
   # fe [FUZZY PATTERN] - Open the selected file with the default editor
   #   - Bypass fuzzy finder if there's only one match (--select-1)
   #   - Exit if there's no match (--exit-0)

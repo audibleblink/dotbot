@@ -59,7 +59,7 @@ map      <Leader>b  :Buffers<CR>
 map      <Leader>c  :noh<CR>
 nmap     <Leader>e  :vsp ~/.vimrc<CR>
 nmap     <Leader>ee :source ~/.vimrc<CR>
-map      <Leader>f  :Ag<CR>
+map      <Leader>f  :Find<CR>
 nnoremap <Leader>gs :sp /tmp/scratch<CR>
 nnoremap <silent> <Leader>n :call mappings#cycle_numbering()<CR>
 map      <Leader>p  :Files<CR>
