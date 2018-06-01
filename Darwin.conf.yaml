@@ -22,38 +22,42 @@
 
 - tap:
     - caskroom/fonts
+    - crisidev/homebrew-chunkwm
 
 - brew:
     - curl
-    - ripgrep
-    - zsh
     - git
+    - zsh
     - tmux
     - vim
-    - ctags
-    - gnupg2
     - tree
-    - rbenv
-    - nj
-    - goenv
+    - ripgrep
+    - chunkwm
+    - khd
 
 - cask:
+    - font-fontawesome
+    - font-hack-nerd-font
+    - font-sourcecodepro-nerd-font
+    - iterm2
+    - rambox
+    - virtualbox
+    - vagrant
+    - vagrant-manager
     - vlc
     - bettertouchtool
-    - font-fontawesome
     - osxfuse
     - dropbox
-    - sizeup
     - 1password
-    - docker
     - flux
     - docker
-    - postman
     - firefox
     - google-chrome
-    - little-snitch
     - wireshark
-    - iterm2
+    - little-snitch
+    - knockknock
+    - blockblock
+    - oversight
 
 - shell:
   - ["git submodule update --init --recursive", Installing submodules]
