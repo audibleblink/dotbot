@@ -5,20 +5,18 @@
 - clean: ['~']
 
 - link:
-    ~/.agignore: agignore
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.git_template: git_template
-    ~/.gnupg: gnupg
     ~/.fonts: fonts
     ~/.fzf.zsh: fzf.zsh
-    ~/.rubocop.yml: rubocop.yml
-    ~/.rspec: rspec
     ~/.tmux.conf: tmux.conf
     ~/.tmux: tmux
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+    ~/.chunkwmrc: chunkwmrc
+    ~/.skhdrc: skhdrc
 
 - tap:
     - caskroom/fonts
