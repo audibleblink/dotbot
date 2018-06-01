@@ -53,6 +53,7 @@
     - google-chrome
     - little-snitch
     - wireshark
+    - iterm2
 
 - shell:
   - ["git submodule update --init --recursive", Installing submodules]
