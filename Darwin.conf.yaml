@@ -25,7 +25,7 @@
 
 - brew:
     - curl
-    - the_silver_searcher
+    - ripgrep
     - zsh
     - git
     - tmux
@@ -34,6 +34,8 @@
     - gnupg2
     - tree
     - rbenv
+    - nj
+    - goenv
 
 - cask:
     - vlc
