@@ -7,7 +7,7 @@ allow_bold = true
 scrollback_lines = 1000
 #icon_name = terminal
 cursor_blink = on
-browser = /usr/bin/qutebrowser
+browser = /usr/bin/google-chrome-stable
 
 
 [colors]
