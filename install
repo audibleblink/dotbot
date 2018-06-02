@@ -2,8 +2,8 @@
 
 set -e
 
-OS=$(uname)
-CONFIG="$OS.conf.yaml"
+OS="$(uname)"
+CONFIG="${OS}.conf.yaml"
 DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -12,4 +12,4 @@ cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 [[ "$OS" = "Darwin" ]] && plug="-p dotbot-brew/brew.py"
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" $plug -c "${CONFIG}" "${@}"
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" ${plug} -c "${CONFIG}" "${@}"
