@@ -10,3 +10,6 @@ dotbot-brewc
 quickmarks
 qutebrowser/quickmarks
 qutebrowser/qsettings/QtProject.conf
+urls
+.netrwhist
+.uuid
