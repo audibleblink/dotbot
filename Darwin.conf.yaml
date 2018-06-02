@@ -5,57 +5,58 @@
 - clean: ['~']
 
 - link:
-    ~/.gitconfig: gitconfig
-    ~/.gitignore_global: gitignore_global
-    ~/.git_template: git_template
+    ~/.chunkwmrc: chunkwmrc
     ~/.fonts: fonts
     ~/.fzf.zsh: fzf.zsh
+    ~/.git_template: git_template
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    ~/.skhdrc: skhdrc
     ~/.tmux.conf: tmux.conf
     ~/.tmux: tmux
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
-    ~/.chunkwmrc: chunkwmrc
-    ~/.skhdrc: skhdrc
 
 - tap:
     - caskroom/fonts
     - crisidev/homebrew-chunkwm
 
 - brew:
+    - chunkwm
     - curl
     - git
-    - zsh
-    - tmux
-    - vim
-    - tree
-    - ripgrep
-    - chunkwm
     - koekeishiya/formulae/skhd
+    - ripgrep
+    - tmux
+    - tree
+    - vim
+    - zsh
 
 - cask:
+    - 1password
+    - bettertouchtool
+    - blockblock
+    - docker
+    - dropbox
+    - firefox
+    - flux
     - font-fontawesome
     - font-hack-nerd-font
     - font-sourcecodepro-nerd-font
+    - google-chrome
     - iterm2
+    - karabiner-elements
+    - knockknock
+    - little-snitch
+    - osxfuse
+    - oversight
     - rambox
-    - virtualbox
     - vagrant
     - vagrant-manager
+    - virtualbox
     - vlc
-    - bettertouchtool
-    - osxfuse
-    - dropbox
-    - 1password
-    - flux
-    - docker
-    - firefox
-    - google-chrome
     - wireshark
-    - little-snitch
-    - knockknock
-    - blockblock
-    - oversight
 
 - shell:
   - ["git submodule update --init --recursive", Installing submodules]
