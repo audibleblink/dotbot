@@ -31,7 +31,7 @@
     - tree
     - ripgrep
     - chunkwm
-    - khd
+    - koekeishiya/formulae/skhd
 
 - cask:
     - font-fontawesome
