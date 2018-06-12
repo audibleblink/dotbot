@@ -13,3 +13,6 @@
 [submodule "dotbot-brew"]
 	path = dotbot-brew
 	url = https://github.com/d12frosted/dotbot-brew.git
+[submodule "zsh-files/plugins/zsh-pure"]
+	path = zsh-files/plugins/zsh-pure
+	url = https://github.com/sindresorhus/pure.git
