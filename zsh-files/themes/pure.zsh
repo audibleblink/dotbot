@@ -983,13 +983,13 @@ prompt_pure_async_callback() {
 
 prompt_pure_update_vim_prompt() {
 	setopt localoptions noshwordsplit
-	prompt_pure_state[prompt]=${${KEYMAP/vicmd/${PURE_PROMPT_VICMD_SYMBOL:-❮}}/(main|viins)/${PURE_PROMPT_SYMBOL:-❯}}
+	prompt_pure_state[prompt]=${${KEYMAP/vicmd/${PURE_PROMPT_VICMD_SYMBOL:-❮❮}}/(main|viins)/${PURE_PROMPT_SYMBOL:-❯❯}}
 	zle && zle .reset-prompt
 }
 
 prompt_pure_reset_vim_prompt() {
 	setopt localoptions noshwordsplit
-	prompt_pure_state[prompt]=${PURE_PROMPT_SYMBOL:-❯}
+	prompt_pure_state[prompt]=${PURE_PROMPT_SYMBOL:-❯❯}
 	zle && zle .reset-prompt
 }
 
@@ -1038,7 +1038,7 @@ prompt_pure_state_setup() {
 	typeset -gA prompt_pure_state
 	prompt_pure_state=(
 		username "$username"
-		prompt	 "${PURE_PROMPT_SYMBOL:-❯}"
+		prompt	 "${PURE_PROMPT_SYMBOL:-❯❯}"
 	)
 }
 
@@ -1085,7 +1085,7 @@ prompt_pure_setup() {
 	PROMPT='%(12V.%F{242}%12v%f .)'
 
 	# prompt turns red if the previous command didn't exit with 0
-	PROMPT+='%(?.%F{magenta}.%F{red})${prompt_pure_state[prompt]}%f '
+	PROMPT+='%(?.%F{white}.%F{red})${prompt_pure_state[prompt]}%f '
 
 	# Store prompt expansion symbols for in-place expansion via (%). For
 	# some reason it does not work without storing them in a variable first.
