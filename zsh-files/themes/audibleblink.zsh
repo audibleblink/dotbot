@@ -31,7 +31,7 @@ _return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
 _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
 
 function parse_git_dirty() {
-  local FLAGS=('--porcelain' '--ignore-submodules=dirty' '--untracked-files=no')
+  local FLAGS=('--porcelain' '--ignore-submodules=dirty')
   local STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
   if [[ -n $STATUS ]]; then
     echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
