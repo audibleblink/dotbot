@@ -1084,8 +1084,8 @@ prompt_pure_setup() {
 	# if a virtualenv is activated, display it in grey
 	PROMPT='%(12V.%F{242}%12v%f .)'
 
-	# prompt turns red if the previous command didn't exit with 0
-	PROMPT+='%(?.%F{white}.%F{red})${prompt_pure_state[prompt]}%f '
+	# prompt turns red if the previous command didn't exit with 0 or 130 (<C>c)
+	PROMPT+='%(?.%F{white}.%130(?.%F{white}.%F{red}))${prompt_pure_state[prompt]}%f '
 
 	# Store prompt expansion symbols for in-place expansion via (%). For
 	# some reason it does not work without storing them in a variable first.
