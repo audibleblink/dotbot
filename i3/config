@@ -6,19 +6,11 @@
   set $base01 #1f222d
   set $base02 #252936
   set $base03 #7780a1
-  set $base04 #C0C5CE
-  set $base05 #d1d4e0
-  set $base06 #C9CCDB
   set $base07 #ffffff
-  set $base08 #ee829f
-  set $base09 #f99170
-  set $base0A #ffefcc
-  set $base0B #a5ffe1
-  set $base0C #97e0ff
-  set $base0D #97bbf7
-  set $base0E #c0b7f9
   set $base0F #fcc09e
-  set $border #f99157
+
+  set_from_resource $border color6 #000000
+  set_from_resource $base08 color1 #000000
 
 # Window Colours
 #                         border  background text    indicator
@@ -83,16 +75,16 @@
   }
 
 # Workspace-Related Bindings
-  set $workspace1  "1:      "
-  set $workspace2  "2:      "
-  set $workspace3  "3:      "
-  set $workspace4  "4:      "
-  set $workspace5  "5:      "
-  set $workspace6  "6:      "
-  set $workspace7  "7:      "
-  set $workspace8  "8:      "
-  set $workspace9  "9:      "
-  set $workspace10 "10:      "
+  set $workspace1  "1"
+  set $workspace2  "2"
+  set $workspace3  "3"
+  set $workspace4  "4"
+  set $workspace5  "5"
+  set $workspace6  "6"
+  set $workspace7  "7"
+  set $workspace8  "8"
+  set $workspace9  "9"
+  set $workspace10 "10"
 
   bindsym $mod+1 workspace $workspace1
   bindsym $mod+2 workspace $workspace2
@@ -116,24 +108,6 @@
   bindsym $mod+Shift+9 move container to workspace $workspace9
   bindsym $mod+Shift+0 move container to workspace $workspace10
 
-# i3 Status Bar
-bar {
-  font pango: Source Code Pro, FontAwesome 9
-  position top
-  # mode hide
-  status_command i3blocks
-  strip_workspace_numbers yes
-  colors {
-    separator $base03
-    background $base01
-    statusline $base05
-                     # border  background text
-    focused_workspace  $base01 $base09    $base01
-    active_workspace   $base01 $base02    $base03
-    inactive_workspace $base01 $base01    $base03
-    urgent_workspace   $base01 $base01    $base08
-  }
-}
 
 # Program Workspace Assignments
   assign [class="qutebrowser"] $workspace1
@@ -166,8 +140,8 @@ gaps outer 1
 
 # Startup
   exec_always --no-startup-id xrandr --dpi 180
-  exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/.wallpaper.jpg
   exec_always --no-startup-id compton --config ~/.config/compton/config
+  exec_always --no-startup-id $HOME/.config/i3/bin/polybar.sh
 
   exec --no-startup-id dropbox start
   exec --no-startup-id xfce4-power-manager
@@ -176,10 +150,11 @@ gaps outer 1
   exec --no-startup-id redshift -l 40.7218:-74.0447 -t 6500:2500
   exec --no-startup-id dunst
   exec --no-startup-id cmst
+  exec --no-startup-id xcape -e "Control_L=Escape"
+  exec --no-startup-id feh --bg-scale $HOME/.config/i3/.wallpaper.jpg
 
 # Keyboard
-  exec_always setxkbmap -option "altwin:swap_lalt_lwin"
+  # exec_always setxkbmap -option "altwin:swap_lalt_lwin"
   exec_always xmodmap -e "pointer = 1 2 3 5 4 7 6 8 9 10 11 12" # set 'natural' scrolling
 
   exec_always setxkbmap -option "ctrl:nocaps"
-  exec_always xcape -e "Control_L=Escape"

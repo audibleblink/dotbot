@@ -10,7 +10,6 @@
 [colors]
 black = ${xrdb:*.color0}
 background = #c0222626
-accent = #ffe28131
 red = ${xrdb:*.color1}
 green = ${xrdb:*.color2}
 yellow = ${xrdb:*.color3}
@@ -18,6 +17,7 @@ blue = ${xrdb:*.color4}
 magenta = ${xrdb:*.color5}
 cyan = ${xrdb:*.color6}
 white = ${xrdb:*.color7}
+accent = ${self.cyan}
 
 [global/wm]
 margin-top = 5
@@ -49,7 +49,7 @@ tray-padding = 0
 
 [module/i3]
 type = internal/i3
-strip-wsnumbers = true
+;strip-wsnumbers = true
 enable-click = true
 index-sort = true
 format = <label-state> <label-mode>
@@ -61,7 +61,7 @@ label-focused-font = 2
 label-unfocused-font = 2
 label-urgent-font = 2
 label-visible-font = 2
-label-visible = %icon%
+;label-visible = %label%
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
@@ -76,7 +76,7 @@ label-focused = %icon%
 label-focused-background = ${colors.accent}
 label-focused-foreground = ${colors.black}
 label-focused-padding = 3
-label-unfocused = %icon%
+label-unfocused = %name%
 label-unfocused-padding = 3
 label-urgent = %icon%
 label-urgent-foreground = ${colors.red}
@@ -103,7 +103,6 @@ date =  %A, %b. %d  %H:%M
 time = %H:%M
 interval = 5
 format-font =3 
-;format-background = ${colors.yellow}
 format-background = ${colors.accent}
 format-foreground = ${colors.black}
 format-padding = 1
@@ -140,12 +139,14 @@ label-volume = ""
 format-muted-prefix = " "
 format-muted-prefix-margin = 2
 label-muted = " mute    "
-bar-volume-width = 10
+bar-volume-width = 6
 bar-volume-gradient = true
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
+bar-volume-fill-foreground = ${colors.accent}
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.black}
+bar-volume-empty-foreground = ${colors.white}
+

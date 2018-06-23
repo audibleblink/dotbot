@@ -124,8 +124,8 @@
     browser = /usr/bin/google-chrome
 
 [frame]
-    width = 4
-    color = "#e28131"
+    width = 2
+    color = "#66cccc"
 
 [shortcuts]
     # shortcuts are specified as [modifier+][modifier+]...key
