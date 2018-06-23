@@ -2,7 +2,7 @@
 [user]
 	name = Alex Flores
 	email = domain@me.com
-	signingkey = F81642CB
+	signingkey = 687EF6FFF81642CB
 
 [core]
 	excludesfile = ~/.gitignore_global
@@ -10,11 +10,11 @@
 [github]
 	user = audibleblink
 
-[init]
-	templatedir = ~/.git_template
+# [init]
+# 	templatedir = ~/.git_template
 
-# [commit]
-# 	gpgsign = true
+[commit]
+	gpgsign = true
 
 [alias]
 	pul = pull --rebase
