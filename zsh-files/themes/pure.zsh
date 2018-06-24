@@ -635,7 +635,7 @@ prompt_pure_preprompt_render() {
 	fi
 
 	# Username and machine, if applicable.
-	# [[ -n $prompt_pure_state[username] ]] && preprompt_parts+=('${prompt_pure_state[username]}')
+	[[ -n $prompt_pure_state[username] ]] && preprompt_parts+=('${prompt_pure_state[username]}')
 	# Execution time.
 	[[ -n $prompt_pure_cmd_exec_time ]] && preprompt_parts+=('%F{yellow}${prompt_pure_cmd_exec_time}%f')
 
@@ -1011,14 +1011,17 @@ prompt_pure_state_setup() {
 
 		local reIPv6='([a-f0-9:]+:+)+[a-f0-9]+'  # Simplified, but matches loopback as well (::1).
 		local reIPv4='([0-9]{1,3}\.){3}[0-9]+'   # Simplified, allows invalid ranges.
+
 		# Here we assume two non-consecutive periods represents a
 		# hostname. This matches foo.bar.baz, but not foo.bar.
-		local reHostname='([.][^. ]+){2}'
+		# BUGBUG: Incorrect assumption
+		# local reHostname='([.][^. ]+){2}'
 
 		# Usually the remote address is surrounded by parenthesis, but
 		# not on all systems (e.g. busybox).
 		local -H MATCH MBEGIN MEND
-		if [[ $who_out =~ "\(?($reIPv4|$reIPv6|$reHostname)\)?\$" ]]; then
+		if [[ $who_out =~ "\(?($reIPv4|$reIPv6)\)?\$" ]]; then
+			echo SHIT
 			ssh_connection=$MATCH
 
 			# Export variable to allow detection propagation inside
