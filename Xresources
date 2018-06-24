@@ -54,26 +54,25 @@
 !
 
 !States: bg, fg, bgalt, hlbg, hlfg
-rofi.color-normal:   t_transparent,t_foreground,t_transparent,t_transparent,#f99157
-rofi.color-active:   t_transparent,#0000ff,t_transparent,t_aqua,t_white
+rofi.color-normal:   t_transparent,t_foreground,t_transparent,t_transparent,t_blue
+rofi.color-active:   t_transparent,t_aqua,t_transparent,t_aqua,t_white, t_aqua
+rofi.color-window:   t_transparent,t_white,t_current_line
 
 rofi.color-enabled: true
 rofi.fuzzy: true
 rofi.dpi: 220
 rofi.hide-scrollbar: true
-rofi.color-window:                   t_transparent,t_aqua
 rofi.states: background, border
 rofi.separator-style: solid
-rofi.eh: 1
-rofi.bw: 2
+rofi.line-margin: 15
+rofi.eh: 2
+rofi.bw: 0
 rofi.columns: 1
-rofi.padding: 50
-rofi.line-margin: 35
-rofi.xoffset: 0
-rofi.yoffset: 350
-rofi.opacity: 100
+rofi.padding: 150
 rofi.location: 2
-rofi.width: 66
-rofi.font: Source Sans Pro 12
-rofi.lines: 4
+rofi.width: 100
+rofi.font: Source Sans Pro 16
+rofi.lines: 3
+rofi.fullscreen: false
+rofi.auto-select: false
 rofi.border-radius: 8
