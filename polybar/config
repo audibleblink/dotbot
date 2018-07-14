@@ -35,17 +35,18 @@ foreground = ${colors.white}
 border-size=0
 border-bottom-size=0
 border-color=#00
-spacing = 1
-padding-left = 1
+spacing = 0
+padding-left = 0
 padding-right = 0
-module-margin-left = 0
-module-margin-right = 0
+module-margin-left = 1
+module-margin-right = 1
 line-size = 6
 modules-left = i3
 modules-center = 
-modules-right = volume wlan battery date
+modules-right = cpu memory volume date battery
 tray-position = right
-tray-padding = 0
+tray-padding = 1
+tray-maxsize = 26
 
 [module/i3]
 type = internal/i3
@@ -79,7 +80,7 @@ label-focused-padding = 3
 label-unfocused = %name%
 label-unfocused-padding = 3
 label-urgent = %icon%
-label-urgent-foreground = ${colors.red}
+label-urgent-foreground = ${colors.white}
 label-urgent-background = ${colors.red}
 label-urgent-padding = 3
 
@@ -132,13 +133,13 @@ animation-charging-4 = 
 animation-charging-framerate = 750
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 format-volume = <label-volume> <bar-volume>
 format-volume-padding = 2
 label-volume = ""
 format-muted-prefix = " "
 format-muted-prefix-margin = 2
-label-muted = " mute    "
+label-muted = " muted   "
 bar-volume-width = 6
 bar-volume-gradient = true
 bar-volume-indicator = |
@@ -150,3 +151,67 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.white}
 
+[module/cpu]
+type = internal/cpu
+interval = 5
+
+; Available tags:
+;   <label> (default)
+;   <bar-load>
+;   <ramp-load>
+;   <ramp-coreload>
+format = <label> <ramp-load>
+
+; Available tokens:
+;   %percentage% (default) - total cpu load
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+label = CPU %percentage%%
+ramp-load-0 = |─────
+ramp-load-1 = ─|────
+ramp-load-2 = ──|───
+ramp-load-3 = ───|──
+ramp-load-4 = ────|─
+ramp-load-5 = ─────|
+
+
+[module/memory]
+type = internal/memory
+interval = 5
+; Available tags:
+;   <label> (default)
+;   <bar-used>
+;   <bar-free>
+;   <ramp-used>
+;   <ramp-free>
+format = <label> <ramp-used>
+
+; Available tokens:
+;   %percentage_used% (default)
+;   %percentage_free%
+;   %gb_used%
+;   %gb_free%
+;   %gb_total%
+;   %mb_used%
+;   %mb_free%
+;   %mb_total%
+;   %percentage_swap_used%
+;   %percentage_swap_free%
+;   %mb_swap_total%
+;   %mb_swap_free%
+;   %mb_swap_used%
+;   %gb_swap_total%
+;   %gb_swap_free%
+;   %gb_swap_used%
+
+label = RAM %percentage_used%%
+
+ramp-used-0 = |────────
+ramp-used-1 = ─|───────
+ramp-used-2 = ──|──────
+ramp-used-3 = ───|─────
+ramp-used-4 = ────|────
+ramp-used-5 = ─────|───
+ramp-used-6 = ──────|──
+ramp-used-7 = ───────|─
+ramp-used-8 = ────────|
