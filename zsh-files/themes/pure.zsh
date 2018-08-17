@@ -1021,7 +1021,6 @@ prompt_pure_state_setup() {
 		# not on all systems (e.g. busybox).
 		local -H MATCH MBEGIN MEND
 		if [[ $who_out =~ "\(?($reIPv4|$reIPv6)\)?\$" ]]; then
-			echo SHIT
 			ssh_connection=$MATCH
 
 			# Export variable to allow detection propagation inside
