@@ -33,10 +33,6 @@ alias tedit="e ~/.tmux.conf"
 alias bedit="e ~/.vim/plugins.vim"
 alias reload="source ~/.zshrc"
 
-# necessary when using Termite
-[ "$TERM" = "xterm-termite" ] && alias ssh="TERM=screen-256color ssh"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
-[ -d ~/.go ] && export GOPATH=${HOME}/.go && export PATH=${PATH}:${GOPATH}/bin
 
