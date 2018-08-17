@@ -7,17 +7,16 @@
   set $base02 #252936
   set $base03 #7780a1
   set $base07 #ffffff
-  set $base0F #fcc09e
 
-  set_from_resource $border color6 #000000
-  set_from_resource $base08 color1 #000000
+  set_from_resource $base08 color1  #000000
+  set_from_resource $border color6  #000000
 
 # Window Colours
 #                         border  background text    indicator
-  client.focused          $base01 $border    $base07 $base0F
-  client.focused_inactive $base02 $base02    $base03 $base0F
-  client.unfocused        $base02 $base02    $base03 $base0F
-  client.urgent           $base02 $base08    $base00 $base0F
+  client.focused          $base01 $border    $base07 $border
+  client.focused_inactive $base02 $base02    $base03 $border
+  client.unfocused        $base02 $base02    $base03 $border
+  client.urgent           $base02 $base08    $base00 $border
 
 # General Configuration
   font pango:System Source Code Pro 9
@@ -150,11 +149,11 @@ gaps outer 1
   exec --no-startup-id redshift -l 40.7218:-74.0447 -t 6500:2500
   exec --no-startup-id dunst
   exec --no-startup-id cmst
-  exec --no-startup-id xcape -e "Control_L=Escape"
   exec --no-startup-id feh --bg-scale $HOME/.config/i3/.wallpaper.jpg
 
 # Keyboard
   # exec_always setxkbmap -option "altwin:swap_lalt_lwin"
   exec_always xmodmap -e "pointer = 1 2 3 5 4 7 6 8 9 10 11 12" # set 'natural' scrolling
 
-  exec_always setxkbmap -option "ctrl:nocaps"
+  # exec_always setxkbmap -option "ctrl:nocaps"
+  # exec --no-startup-id xcape -e "Control_L=Escape"
