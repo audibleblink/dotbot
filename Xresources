@@ -69,7 +69,8 @@ rofi.eh: 2
 rofi.bw: 0
 rofi.columns: 1
 rofi.padding: 150
-rofi.location: 2
+rofi.location: 3
+rofi.yoffset: 300
 rofi.width: 100
 rofi.font: Source Sans Pro 16
 rofi.lines: 3
