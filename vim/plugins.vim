@@ -25,7 +25,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'suan/vim-instant-markdown',      { 'for': 'markdown' }
 
 Plug 'chrisbra/vim-zsh',               { 'for': 'zsh' }
-Plug 'fatih/vim-go',                   { 'for': 'go' }
+Plug 'fatih/vim-go',                   { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'freitass/todo.txt-vim',          { 'for': 'txt' }
 Plug 'mattn/emmet-vim',                { 'for': ['html', 'javascript.jsx'] }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
