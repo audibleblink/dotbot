@@ -14,8 +14,8 @@ plugins=(
   # fuck
   fzf
   todo
-  vagrant
-  # coding
+  # vagrant
+  coding
   # pentest
   #must be last
   history-substring-search
@@ -32,6 +32,7 @@ alias vedit="e ~/.vimrc"
 alias tedit="e ~/.tmux.conf"
 alias bedit="e ~/.vim/plugins.vim"
 alias reload="source ~/.zshrc"
+alias zstd='zstd -4 -v -T0'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local

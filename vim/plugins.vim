@@ -2,6 +2,7 @@ set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
+Plug 'vim-scripts/Fruidle'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jiangmiao/auto-pairs'
