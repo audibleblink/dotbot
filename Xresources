@@ -1,27 +1,29 @@
 
 #define t_background            #2d2d2d
 #define t_current_line          #393939
-#define t_selection      	#515151
-#define t_foreground    	#cccccc
-#define t_comment       	#999999
+#define t_selection             #515151
+#define t_foreground            #cccccc
+#define t_comment               #999999
+
 #define t_red                   #f2777a
-#define t_orange		#f99157
-#define t_yellow        	#ffcc66
-#define t_green	        	#99cc99
-#define t_aqua	        	#66cccc
-#define t_blue	        	#6699cc
-#define t_purple        	#cc99cc
-#define t_transparent        	#2f343f
-#define t_white        	        #ffffff
+#define t_orange                #f99157
+#define t_yellow                #ffcc66
+#define t_green                 #99cc99
+#define t_aqua                  #66cccc
+#define t_blue                  #6699cc
+#define t_purple                #cc99cc
+#define t_transparent           #2f343f
+#define t_white                 #ffffff
+#define t_black                 #000000
 
 
 *.foreground:   t_foreground
 *.background:   t_background
-*.cursorColor:  #ccc
-*.cursorColor2:  #ccc
+*.cursorColor:  t_foreground
+*.cursorColor2: t_foreground
 
 ! Black / Grey
-*.color0:       #000000
+*.color0:       t_black
 *.color8:       #666666
 
 ! Red / Bright Red
@@ -49,8 +51,8 @@
 *.color14:      #54ced6
 
 ! Light Grey (Selection) + White (Current Line)
-*.color7:       #ffffff
-*.color15:      #ffffff
+*.color7:       t_white
+*.color15:      t_white
 !
 
 !States: bg, fg, bgalt, hlbg, hlfg
@@ -77,3 +79,4 @@ rofi.lines: 3
 rofi.fullscreen: false
 rofi.auto-select: false
 rofi.border-radius: 8
+
