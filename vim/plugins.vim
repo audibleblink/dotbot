@@ -8,33 +8,34 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user' 
 Plug 'maralla/completor.vim'
-Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
-Plug 'junegunn/goyo.vim'
-
 Plug 'vimwiki/vimwiki'
-Plug 'suan/vim-instant-markdown',      { 'for': 'markdown' }
+Plug 'w0rp/ale'
 
+Plug 'OmniSharp/omnisharp-vim',        { 'for': 'cs' }
 Plug 'chrisbra/vim-zsh',               { 'for': 'zsh' }
 Plug 'fatih/vim-go',                   { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'freitass/todo.txt-vim',          { 'for': 'txt' }
 Plug 'mattn/emmet-vim',                { 'for': ['html', 'javascript.jsx'] }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
+Plug 'suan/vim-instant-markdown',      { 'for': 'markdown' }
 Plug 'thoughtbot/vim-rspec',           { 'for': 'ruby' }
 Plug 'tpope/vim-bundler',              { 'for': 'ruby' }
 Plug 'tpope/vim-cucumber',             { 'for': 'ruby' }
-
 call plug#end()
+
 filetype plugin indent on
 
 " Instant Markdown
@@ -42,6 +43,7 @@ filetype plugin indent on
 
 " Go Completor
   let g:completor_gocode_binary = 'gocode'
+  let g:completor_cs_omni_trigger = '.*'
 
 " Colorscheme
   syntax on
@@ -89,3 +91,42 @@ set grepprg=rg\ --vimgrep
 " --color: Search color options
 "  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+
+" let g:OmniSharp_server_use_mono = 1
+" let g:OmniSharp_server_path = '/home/link/.omnisharp/omnisharp-roslyn/OmniSharp.exe'
+let g:ale_linters = { 'cs': ['OmniSharp'] }
+" let g:OmniSharp_selector_ui = 'fzf'
+" let g:OmniSharp_host = 'http://localhost:2000'
+" let g:OmniSharp_proc_debug = 1
+" let g:OmniSharp_loglevel = 'debug'
+
+augroup omnisharp_commands
+    autocmd!
+    autocmd FileType *.cs :call OmniSharp#HighlightTypes()
+
+    " Show type information automatically when the cursor stops moving
+    autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
+
+    " The following commands are contextual, based on the cursor position.
+    autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
+    autocmd FileType cs nnoremap <buffer> <C-]> :OmniSharpGotoDefinition<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+
+    " Finds members in the current buffer
+    autocmd FileType cs nnoremap <buffer> <Leader>r :OmniSharpFindMembers<CR>
+
+    autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>tp :OmniSharpTypeLookup<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
+
+    autocmd FileType cs nnoremap <buffer> <Leader>cc :ccl<CR>
+
+    " Navigate up and down by method/property/field
+    autocmd FileType cs nnoremap <buffer> <C-k> :OmniSharpNavigateUp<CR>zz
+    autocmd FileType cs nnoremap <buffer> <C-j> :OmniSharpNavigateDown<CR>zz
+    autocmd FileType cs nnoremap <buffer> c* :OmniSharpRename<CR>
+    autocmd FileType cs nnoremap <Leader>l :OmniSharpCodeFormat<CR>:OmniSharpFixUsings<CR>
+augroup END
+
