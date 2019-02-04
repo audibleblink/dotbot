@@ -9,7 +9,7 @@
 
 [colors]
 black = ${xrdb:*.color0}
-background = #c0222626
+background = ${xrdb:*.background}
 red = ${xrdb:*.color1}
 green = ${xrdb:*.color2}
 yellow = ${xrdb:*.color3}
