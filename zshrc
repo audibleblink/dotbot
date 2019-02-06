@@ -1,22 +1,29 @@
 ZSH=$HOME/.zsh
 ZSH_CUSTOM=$HOME/.dotfiles/zsh-files
 
-export PATH="${HOME}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="${HOME}/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 export EDITOR="$(which vim)"
 
 theme=pure
 plugins=(
   vi-mode
   clipboard
-  docker-zsh-completion
-  gpg
+  # docker-zsh-completion
+  # gpg
   zsh-autopair
   # fuck
   fzf
+<<<<<<< Updated upstream
   todo
   # vagrant
   coding
   # pentest
+=======
+  # todo
+  # vagrant
+  coding
+  pentest
+>>>>>>> Stashed changes
   #must be last
   history-substring-search
   zsh-syntax-highlighting

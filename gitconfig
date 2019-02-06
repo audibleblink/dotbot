@@ -13,7 +13,7 @@
 # [init]
 # 	templatedir = ~/.git_template
 
-# [commit]
+[commit]
 	# gpgsign = true
 
 [alias]
@@ -28,7 +28,6 @@
 
 [http]
 	postBuffer = 52428800
-
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [url "git@github.com:"]

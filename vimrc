@@ -78,6 +78,8 @@ nmap     <Leader><Tab> :b#<CR>
 nnoremap <Leader><Up> :History:<CR>
 vnoremap  <Leader>y  "+y
 nnoremap  <Leader>u  "+p
+nnoremap  <Leader>gb :DlvToggleBreakpoint<cr>
+nnoremap  <Leader>gd :DlvDebug<cr>
 
 " Make Yank behave
 vnoremap y myy`y

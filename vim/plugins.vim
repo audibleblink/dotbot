@@ -27,6 +27,7 @@ Plug 'w0rp/ale'
 Plug 'OmniSharp/omnisharp-vim',        { 'for': 'cs' }
 Plug 'chrisbra/vim-zsh',               { 'for': 'zsh' }
 Plug 'fatih/vim-go',                   { 'for': 'go', 'do': ':GoInstallBinaries' }
+Plug 'sebdah/vim-delve',               { 'for': 'go' }
 Plug 'freitass/todo.txt-vim',          { 'for': 'txt' }
 Plug 'mattn/emmet-vim',                { 'for': ['html', 'javascript.jsx'] }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
