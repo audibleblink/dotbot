@@ -18,5 +18,3 @@ alias asi='find . -not -iwholename "*node_modules*" -type f -name *.js | xargs f
 # Go
 ###############
 source /home/red/.gvm/scripts/gvm
-# export GOPATH=$HOME/.go
-# export PATH=$PATH:$GOPATH/bin
