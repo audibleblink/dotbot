@@ -119,7 +119,7 @@
 
 gaps inner 15
 gaps outer 1
-smart_gaps on
+# smart_gaps on
 
 # Pulse Audio controls
   bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10% #increase sound volume

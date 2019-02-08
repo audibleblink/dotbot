@@ -2,7 +2,8 @@ set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-scripts/Fruidle'
+Plug 'cormacrelf/vim-colors-github'
+Plug 'dylanaraps/wal.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jiangmiao/auto-pairs'
@@ -54,6 +55,7 @@ filetype plugin indent on
   endif
   set background=dark
   colorscheme oneplus
+  " colorscheme wal
   hi CursorLine cterm=None
   let g:onedark_terminal_italics = 1
 
