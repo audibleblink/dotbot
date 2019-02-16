@@ -13,17 +13,10 @@ plugins=(
   zsh-autopair
   # fuck
   fzf
-<<<<<<< Updated upstream
   todo
   # vagrant
   coding
   # pentest
-=======
-  # todo
-  # vagrant
-  coding
-  pentest
->>>>>>> Stashed changes
   #must be last
   history-substring-search
   zsh-syntax-highlighting
