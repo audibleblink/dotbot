@@ -9,7 +9,7 @@ plugins=(
   vi-mode
   clipboard
   # docker-zsh-completion
-  # gpg
+  gpg
   zsh-autopair
   # fuck
   fzf
