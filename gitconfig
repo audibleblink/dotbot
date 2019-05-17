@@ -23,8 +23,6 @@
 	com = commit -v
 	sta = status -s
 
-[include]
-        path = ~/.gitconfig_local
 
 [http]
 	postBuffer = 52428800
@@ -32,3 +30,6 @@
 	insteadOf = https://github.com/
 [url "git@github.com:"]
 	insteadOf = https://github.com
+
+[include]
+        path = ~/.gitconfig_local
