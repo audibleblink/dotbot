@@ -34,7 +34,7 @@
   bindsym $mod+d exec rofi -show run
   bindsym $mod+p exec betterlockscreen -l dim
   bindsym $mod+g exec scrot ~/Dropbox/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png -e 'viewnior $f'
-  bindsym --release $mod+Shift+g exec scrot -s ~/Dropbox/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png -e 'viewnior $f'
+  bindsym --release $mod+Shift+g exec flameshot gui
 
 # exit i3 (logs you out of your X session)
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -109,8 +109,8 @@
 
 
 # Program Workspace Assignments
-  assign [class="qutebrowser"] $workspace1
-  assign [class="Rambox"] $workspace8
+  assign [class="vivaldi"] $workspace1
+  assign [class="browserx"] $workspace8
   assign [class="Spotify"] $workspace10
 
 # Default to Floating
@@ -144,11 +144,9 @@ gaps outer 1
 
   exec --no-startup-id dropbox start
   exec --no-startup-id xfce4-power-manager
-  exec --no-startup-id xfce4-clipman
   exec --no-startup-id xautolock -detectsleep -time 10 -locker "betterlockscreen -l dim"
   exec --no-startup-id redshift -l 40.7218:-74.0447 -t 6500:2500
   exec --no-startup-id dunst
-  exec --no-startup-id cmst
   exec --no-startup-id feh --bg-scale $HOME/.config/i3/.wallpaper.jpg
 
 # Keyboard
