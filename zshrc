@@ -27,6 +27,7 @@ source $ZSH_CUSTOM/sourcer.zsh                # Sets up fpaths and plugins
 source $ZSH_CUSTOM/themes/${theme}.zsh        # Sets theme
 
 alias e=$EDITOR
+alias iedit="e ~/.config/i3/config"
 alias zedit="e ~/.zshrc"
 alias vedit="e ~/.vimrc"
 alias tedit="e ~/.tmux.conf"
