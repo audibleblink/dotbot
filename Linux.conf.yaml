@@ -8,6 +8,9 @@
     ~/.config/i3: 
       create: true
       path: i3
+    ~/.config/autorunner: 
+      create: true
+      path: autorunner
     ~/.config/spotifyd:
       create: true
       path: spotifyd
@@ -32,6 +35,9 @@
     ~/.config/compton/config:
       create: true
       path: i3/.compton.conf
+    ~/.config/vivaldi-flags.conf:
+      create: true
+      path: vivaldi-flags.conf
     ~/.fonts: fonts
     ~/.fzf.zsh: fzf.zsh
     ~/.gitconfig: gitconfig
@@ -43,6 +49,7 @@
     ~/.tmux: tmux
     ~/.vim: vim
     ~/.vimrc: vimrc
+    ~/.xinitrc: xinitrc
     ~/.Xresources: Xresources
     ~/.zshrc: zshrc
 

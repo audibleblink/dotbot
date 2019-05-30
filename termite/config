@@ -7,7 +7,7 @@ allow_bold = true
 scrollback_lines = 1000
 #icon_name = terminal
 cursor_blink = on
-browser = /home/red/bin/vivaldi
+browser = /${HOME}/.local/bin/vivaldi
 
 
 [colors]

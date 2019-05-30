@@ -24,6 +24,10 @@ margin-top = 5
 margin-bottom = 5
 
 [bar/Bar]
+modules-left = i3
+modules-center = 
+modules-right = cpu memory volume wlan date battery
+
 font-0 = Hack:size=14;4
 font-1 = FontAwesome:size=18;4
 width = 100%
@@ -41,9 +45,6 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 line-size = 6
-modules-left = i3
-modules-center = 
-modules-right = cpu memory volume date battery
 tray-position = right
 tray-padding = 1
 tray-maxsize = 26
@@ -84,14 +85,14 @@ label-urgent-foreground = ${colors.white}
 label-urgent-background = ${colors.red}
 label-urgent-padding = 3
 
-[module/mpd]
-type = internal/mpd
-host = 127.0.0.1
-port = 6600
+;[module/mpd]
+;type = internal/mpd
+;host = 127.0.0.1
+;port = 6600
 
 [module/wlan]
 type = internal/network
-interface = wlp4s0
+interface = wlan0
 interval = 5.0
 format-connected = <ramp-signal> <label-connected>
 label-connected = "%essid%  "

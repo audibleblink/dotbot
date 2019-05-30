@@ -121,7 +121,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # browser for opening urls in context menu
-    browser = /home/red/bin/vivaldi
+    browser = /${HOME}/.local/bin/vivaldi
 
 [frame]
     width = 2

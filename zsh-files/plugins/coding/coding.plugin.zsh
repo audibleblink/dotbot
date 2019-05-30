@@ -17,4 +17,4 @@ alias asi='find . -not -iwholename "*node_modules*" -type f -name *.js | xargs f
 ###############
 # Go
 ###############
-source /home/red/.gvm/scripts/gvm
+source /${HOME}/.gvm/scripts/gvm

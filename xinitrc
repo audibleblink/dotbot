@@ -1,4 +1,4 @@
 xrdb .Xresources
 setxkbmap -option "ctrl:nocaps"
 xcape -e "Control_L=Escape"
-exec i3
+exec dbus-launch i3
