@@ -11,9 +11,6 @@
     ~/.config/autorunner: 
       create: true
       path: autorunner
-    ~/.config/spotifyd:
-      create: true
-      path: spotifyd
     ~/.config/polybar:
       create: true
       path: polybar
