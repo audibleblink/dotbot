@@ -138,22 +138,3 @@ gaps outer 1
 
 # Startup
   exec_always --no-startup-id sh path/to/autorunner
-
-  # exec_always --no-startup-id xrandr --dpi 180
-  # exec_always --no-startup-id compton --config ~/.config/compton/config
-  # exec_always --no-startup-id $HOME/.config/i3/bin/polybar.sh
-  #
-  # exec --no-startup-id dropbox start
-  # exec --no-startup-id xfce4-power-manager
-  # exec --no-startup-id xautolock -detectsleep -time 10 -locker "betterlockscreen -l dim"
-  # exec --no-startup-id redshift -l 40.7218:-74.0447 -t 6500:2500
-  # exec --no-startup-id dunst
-  # exec --no-startup-id clipmenud
-  # exec --no-startup-id feh --bg-scale $HOME/.config/i3/.wallpaper.jpg
-
-# Keyboard
-  # exec_always setxkbmap -option "altwin:swap_lalt_lwin"
-  # exec_always xmodmap -e "pointer = 1 2 3 5 4 7 6 8 9 10 11 12" # set 'natural' scrolling
-
-  # exec_always setxkbmap -option "ctrl:nocaps"
-  # exec --no-startup-id xcape -e "Control_L=Escape"
