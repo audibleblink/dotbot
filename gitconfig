@@ -26,10 +26,12 @@
 
 [http]
 	postBuffer = 52428800
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
-[url "git@github.com:"]
-	insteadOf = https://github.com
+
+# Uncomment after dotfile restoration
+# [url "ssh://git@github.com/"]
+# 	insteadOf = https://github.com/
+# [url "git@github.com:"]
+# 	insteadOf = https://github.com
 
 [include]
         path = ~/.gitconfig_local
