@@ -19,18 +19,19 @@
 #   execute "1" "1" "thunar --daemon"
 #
 
-execute "0" "0" "dunst"
+execute "1" "0" "dunst"
+execute "1" "0" "feh --bg-scale $HOME/.config/i3/.wallpaper.jpg"
 
+execute "0" "0" "xrandr --dpi 128"
 execute "0" "0" "setxkbmap -option \"ctrl:nocaps\""
 execute "0" "0" "xcape -e \"Control_L=Escape\""
 execute "0" "0" "redshift -l 40.7218:-74.0447 -t 6500:2500"
 
 execute "0" "1" "clipmenud"
-execute "0" "1" "dropboxd"
+execute "0" "1" "dropbox start"
 execute "0" "1" "xss-lock -v -n \"notify-send --urgency=critical --icon=/usr/share/icons/Adwaita/48x48/actions/system-lock-screen.png -- 'Auto-lock in 30 sec.'\" -- /usr/local/bin/xlock"
 execute "0" "1" "nm-applet"
 
-execute "1" "0" "feh --bg-scale $HOME/.config/i3/.wallpaper.jpg"
 
 execute "1" "1" "compton"
 execute "1" "1" "thunar --daemon"
