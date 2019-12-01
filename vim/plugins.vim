@@ -133,3 +133,4 @@ augroup omnisharp_commands
     autocmd FileType cs nnoremap <Leader>l :OmniSharpCodeFormat<CR>:OmniSharpFixUsings<CR>
 augroup END
 
+au! BufNewFile,BufRead *.svelte set ft=html
