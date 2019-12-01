@@ -5,12 +5,12 @@
 - clean: ['~']
 
 - link:
+    ~/.config/conky:
+      create: true
+      path: conky
     ~/.config/i3:
       create: true
       path: i3
-    ~/.config/spotifyd:
-      create: true
-      path: spotifyd
     ~/.config/polybar:
       create: true
       path: polybar

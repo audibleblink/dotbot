@@ -5,6 +5,9 @@
 - clean: ['~']
 
 - link:
+    ~/.config/conky: 
+      create: true
+      path: conky
     ~/.config/i3: 
       create: true
       path: i3
