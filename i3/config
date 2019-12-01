@@ -137,4 +137,4 @@ gaps outer 1
   bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Startup
-  exec_always --no-startup-id sh path/to/autorunner
+  exec_always --no-startup-id sh ${HOME}/.local/bin/autorunner
