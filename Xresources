@@ -15,6 +15,7 @@
 #define t_transparent           #2f343f
 #define t_white                 #ffffff
 #define t_black                 #000000
+#define t_slate                 #7780a1
 
 
 *.foreground:   t_foreground
@@ -24,7 +25,7 @@
 
 ! Black / Grey
 *.color0:       t_black
-*.color8:       #666666
+*.color8:       t_slate
 
 ! Red / Bright Red
 *.color1:       t_red

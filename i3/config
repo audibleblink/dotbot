@@ -1,22 +1,19 @@
 # Mod Key - Windows Key
   set $mod Mod4
 
-# Constants
-  set $base00 #101218
-  set $base01 #1f222d
-  set $base02 #252936
-  set $base03 #7780a1
-  set $base07 #ffffff
-
-  set_from_resource $base08 color1  #000000
-  set_from_resource $border color6  #000000
+# Colors
+  set_from_resource $black color0     #000000
+  set_from_resource $red   color1     #000000
+  set_from_resource $blue  color6     #000000
+  set_from_resource $slate slate      #000000
+  set_from_resource $dark  background #000000
 
 # Window Colours
-#                         border  background text    indicator
-  client.focused          $base01 $border    $base07 $border
-  client.focused_inactive $base02 $base02    $base03 $border
-  client.unfocused        $base02 $base02    $base03 $border
-  client.urgent           $base02 $base08    $base00 $border
+#                         border  background  text     indicator
+  client.focused          $dark   $blue       $black   $blue
+  client.focused_inactive $dark   $dark       $slate   $blue
+  client.unfocused        $dark   $dark       $slate   $blue
+  client.urgent           $dark   $red        $dark    $blue
 
 # General Configuration
   font pango:System Source Code Pro 9
