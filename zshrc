@@ -17,6 +17,7 @@ plugins=(
   # vagrant
   coding
   # pentest
+
   #must be last
   history-substring-search
   zsh-syntax-highlighting
@@ -37,4 +38,3 @@ alias zstd='zstd -4 -v -T0'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
-

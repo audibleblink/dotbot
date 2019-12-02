@@ -26,7 +26,7 @@ margin-bottom = 5
 [bar/Bar]
 modules-left = i3
 modules-center = 
-modules-right = cpu memory volume wlan date battery
+modules-right = date volume battery 
 
 font-0 = Hack:size=14;4
 font-1 = FontAwesome:size=18;4
@@ -45,7 +45,7 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 line-size = 6
-tray-position = right
+tray-position = center
 tray-padding = 1
 tray-maxsize = 26
 
@@ -140,7 +140,7 @@ format-volume-padding = 2
 label-volume = ""
 format-muted-prefix = " "
 format-muted-prefix-margin = 2
-label-muted = " muted   "
+label-muted = "muted  "
 bar-volume-width = 6
 bar-volume-gradient = true
 bar-volume-indicator = |

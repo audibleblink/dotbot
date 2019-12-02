@@ -33,7 +33,7 @@
   bindsym $mod+Return exec termite
   bindsym $mod+d exec rofi -show run
   bindsym $mod+p exec betterlockscreen -l dim
-  bindsym $mod+c exec clipmenu
+  bindsym $mod+c exec CM_LAUNCHER=rofi CM_HISTLENGTH=5 clipmenu
   bindsym $mod+g exec scrot ~/Dropbox/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png -e 'viewnior $f'
   bindsym --release $mod+Shift+g exec flameshot gui
 
@@ -111,7 +111,7 @@
 
 # Program Workspace Assignments
   assign [class="vivaldi"] $workspace1
-  assign [class="station"] $workspace8
+  assign [class="Station"] $workspace8
   assign [class="Spotify"] $workspace10
 
 # Default to Floating
