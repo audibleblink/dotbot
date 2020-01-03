@@ -24,6 +24,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
+Plug 'dylanaraps/wal.vim'
 
 Plug 'OmniSharp/omnisharp-vim',        { 'for': 'cs' }
 Plug 'chrisbra/vim-zsh',               { 'for': 'zsh' }
@@ -32,7 +33,7 @@ Plug 'fatih/vim-go',                   { 'for': 'go', 'do': ':GoInstallBinaries'
 Plug 'freitass/todo.txt-vim',          { 'for': 'txt' }
 Plug 'mattn/emmet-vim',                { 'for': ['html', 'javascript.jsx'] }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
-Plug 'suan/vim-instant-markdown',      { 'for': 'markdown' }
+" Plug 'suan/vim-instant-markdown',      { 'for': 'markdown' }
 Plug 'thoughtbot/vim-rspec',           { 'for': 'ruby' }
 Plug 'tpope/vim-bundler',              { 'for': 'ruby' }
 Plug 'tpope/vim-cucumber',             { 'for': 'ruby' }
@@ -53,10 +54,13 @@ filetype plugin indent on
     set termguicolors
     set t_ut=
   endif
-  set background=dark
-  colorscheme oneplus
   " colorscheme wal
-  hi CursorLine cterm=None
+  " colorscheme onedark
+  hi CursorLine term=bold cterm=bold guibg=Grey40
+
+
+  " set background=dark
+  " colorscheme oneplus
   let g:onedark_terminal_italics = 1
 
 " RSpec.vim mappings
@@ -134,3 +138,7 @@ augroup omnisharp_commands
 augroup END
 
 au! BufNewFile,BufRead *.svelte set ft=html
+
+" Python Dev
+let g:completor_python_binary = '/usr/bin/python3'
+

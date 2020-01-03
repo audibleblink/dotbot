@@ -30,6 +30,7 @@ set showcmd
 set splitbelow
 set splitright
 set textwidth=99
+set tags^=./.git/tags
 set timeoutlen=1000 ttimeoutlen=10
 set wiw=100
 
