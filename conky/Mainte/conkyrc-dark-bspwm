@@ -24,8 +24,8 @@ conky.config = {
     default_shade_color = '#BEC8CB',
     default_outline_color = '#BEC8CB',
     alignment = 'top_left',
-    gap_x = 1460,
-    gap_y = 125,
+    gap_x = 1420,
+    gap_y = 145,
     no_buffers = true,
     cpu_avg_samples = 2,
     net_avg_samples = 2,
@@ -37,7 +37,6 @@ conky.config = {
 
 conky.text = [[
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
-${alignr}${offset 250}--------------------------------
 ${alignr}${offset 0}┌──────── ${nodename}${font} ─────────
 ${alignr}${offset -110}${uid_name 1000}${font} ──────┐
 ${alignr}${offset -110}< ${exec lsb_release -ds | sed 's/"//g'} > Distro ─┤
