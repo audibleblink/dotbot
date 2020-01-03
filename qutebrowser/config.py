@@ -146,23 +146,23 @@ c.downloads.position = 'bottom'
 # The editor (and arguments) to use for the `open-editor` command. `{}`
 # gets replaced by the filename of the file to be edited.
 # Type: ShellCommand
-c.editor.command = ["termite", "-e", "vim {}"]
+c.editor.command = ["i3-sensible-terminal", "-e", "vim {}"]
 
 # Font used in the completion categories.
 # Type: Font
-c.fonts.completion.category = ' 8pt monospace'
+c.fonts.completion.category = ' 10pt SNFS Display'
 
 # Font used in the completion widget.
 # Type: Font
-c.fonts.completion.entry = '8pt monospace'
+c.fonts.completion.entry = '10pt SNFS Display'
 
 # Font used for the debugging console.
 # Type: QtFont
-c.fonts.debug_console = '8pt monospace'
+c.fonts.debug_console = '10pt SNFS Display'
 
 # Font used for the hints.
 # Type: Font
-c.fonts.hints = '8pt monospace'
+c.fonts.hints = '14pt SNFS Display'
 
 # Default monospace fonts. Whenever "monospace" is used in a font
 # setting, it's replaced with the fonts listed here.
@@ -171,7 +171,7 @@ c.fonts.monospace = '"Hack", Monospace, "DejaVu Sans Mono", Monaco, "Bitstream V
 
 # Font used in the tab bar.
 # Type: QtFont
-c.fonts.tabs = '8pt monospace'
+c.fonts.tabs = '10pt SFNS Display'
 
 # Font family for standard fonts.
 # Type: FontFamily
@@ -180,7 +180,7 @@ c.fonts.web.family.standard = None
 # Enable smooth scrolling for web pages. Note smooth scrolling does not
 # work with the `:scroll-px` command.
 # Type: Bool
-c.scrolling.smooth = True
+c.scrolling.smooth = False
 
 # Padding for tab indicators
 # Type: Padding
@@ -219,7 +219,7 @@ c.tabs.position = 'top'
 # Either ''webkit'' or ''webengine'' * `{private}` : Indicates when
 # private mode is enabled.
 # Type: FormatString
-c.tabs.title.format = '{title}'
+c.tabs.title.format = '{host}'
 
 # The format to use for the tab title for pinned tabs. The same
 # placeholders like for `tabs.title.format` are defined.
@@ -239,6 +239,11 @@ c.tabs.indicator.width = 0
 # Type: Bool
 c.tabs.wrap = True
 
+c.tabs.show = 'switching'
+c.tabs.show_switching_delay = 2000
+
+
+c.confirm_quit = ['multiple-tabs']
 # Definitions of search engines which can be used via the address bar.
 # Maps a searchengine name (such as `DEFAULT`, or `ddg`) to a URL with a
 # `{}` placeholder. The placeholder will be replaced by the search term,
@@ -263,5 +268,6 @@ config.bind('K', 'tab-next')
 config.bind('X', 'undo')
 config.bind('d', 'scroll-page 0 0.5')
 config.bind('u', 'scroll-page 0 -0.5')
-config.bind('x', 'tab-close')
+onfig.bind('x', 'tab-close')
 config.bind('sp', 'pocket')
+config.bind('ge', 'open-editor')
