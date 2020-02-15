@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  tabs.show_switching_delay:
-    global: 2000
+  tabs.show:
+    global: always

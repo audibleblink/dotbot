@@ -9,14 +9,229 @@
 # Aliases for commands. The keys of the given dictionary are the
 # aliases, while the values are the commands they map to.
 # Type: Dict
-c.aliases = {
-    'pocket': 'open -t https://getpocket.com/edit?url={url}',
-    'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'
-}
+c.aliases = {'pocket': 'open -t https://getpocket.com/edit?url={url}', 'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
+
+# Require a confirmation before quitting the application.
+# Type: ConfirmQuit
+# Valid values:
+#   - always: Always show a confirmation.
+#   - multiple-tabs: Show a confirmation if multiple tabs are opened.
+#   - downloads: Show a confirmation if downloads are running
+#   - never: Never show a confirmation.
+c.confirm_quit = ['multiple-tabs']
 
 # Always restore open sites when qutebrowser is reopened.
 # Type: Bool
 c.auto_save.session = True
+
+# User agent to send.  The following placeholders are defined:  *
+# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
+# The underlying WebKit version (set to a fixed value   with
+# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
+# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
+# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
+# QtWebEngine. * `{upstream_browser_version}`: The corresponding
+# Safari/Chrome version. * `{qutebrowser_version}`: The currently
+# running qutebrowser version.  The default value is equal to the
+# unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
+# read from JavaScript is always the global value.
+# Type: FormatString
+config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
+
+# User agent to send.  The following placeholders are defined:  *
+# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
+# The underlying WebKit version (set to a fixed value   with
+# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
+# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
+# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
+# QtWebEngine. * `{upstream_browser_version}`: The corresponding
+# Safari/Chrome version. * `{qutebrowser_version}`: The currently
+# running qutebrowser version.  The default value is equal to the
+# unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
+# read from JavaScript is always the global value.
+# Type: FormatString
+config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0', 'https://accounts.google.com/*')
+
+# User agent to send.  The following placeholders are defined:  *
+# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
+# The underlying WebKit version (set to a fixed value   with
+# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
+# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
+# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
+# QtWebEngine. * `{upstream_browser_version}`: The corresponding
+# Safari/Chrome version. * `{qutebrowser_version}`: The currently
+# running qutebrowser version.  The default value is equal to the
+# unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
+# read from JavaScript is always the global value.
+# Type: FormatString
+config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
+
+# User agent to send.  The following placeholders are defined:  *
+# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
+# The underlying WebKit version (set to a fixed value   with
+# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
+# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
+# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
+# QtWebEngine. * `{upstream_browser_version}`: The corresponding
+# Safari/Chrome version. * `{qutebrowser_version}`: The currently
+# running qutebrowser version.  The default value is equal to the
+# unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
+# read from JavaScript is always the global value.
+# Type: FormatString
+config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0', 'https://docs.google.com/*')
+
+# Load images automatically in web pages.
+# Type: Bool
+config.set('content.images', True, 'chrome-devtools://*')
+
+# Load images automatically in web pages.
+# Type: Bool
+config.set('content.images', True, 'devtools://*')
+
+# Enable JavaScript.
+# Type: Bool
+config.set('content.javascript.enabled', True, 'chrome-devtools://*')
+
+# Enable JavaScript.
+# Type: Bool
+config.set('content.javascript.enabled', True, 'devtools://*')
+
+# Enable JavaScript.
+# Type: Bool
+config.set('content.javascript.enabled', True, 'chrome://*/*')
+
+# Enable JavaScript.
+# Type: Bool
+config.set('content.javascript.enabled', True, 'qute://*/*')
+
+# Proxy to use. In addition to the listed values, you can use a
+# `socks://...` or `http://...` URL.
+# Type: Proxy
+# Valid values:
+#   - system: Use the system wide proxy.
+#   - none: Don't use any proxy
+c.content.proxy = 'system'
+
+# Where to show the downloaded files.
+# Type: VerticalPosition
+# Valid values:
+#   - top
+#   - bottom
+c.downloads.position = 'bottom'
+
+# Editor (and arguments) to use for the `open-editor` command. The
+# following placeholders are defined:  * `{file}`: Filename of the file
+# to be edited. * `{line}`: Line in which the caret is found in the
+# text. * `{column}`: Column in which the caret is found in the text. *
+# `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
+# Same as `{column}`, but starting from index 0.
+# Type: ShellCommand
+c.editor.command = ['i3-sensible-terminal', '-e', 'vim {}']
+
+# Enable smooth scrolling for web pages. Note smooth scrolling does not
+# work with the `:scroll-px` command.
+# Type: Bool
+c.scrolling.smooth = True
+
+# How to behave when the last tab is closed.
+# Type: String
+# Valid values:
+#   - ignore: Don't do anything.
+#   - blank: Load a blank page.
+#   - startpage: Load the start page.
+#   - default-page: Load the default page.
+#   - close: Close the window.
+c.tabs.last_close = 'close'
+
+# Padding (in pixels) around text for tabs.
+# Type: Padding
+c.tabs.padding = {'bottom': 10, 'left': 10, 'right': 10, 'top': 10}
+
+# Position of the tab bar.
+# Type: Position
+# Valid values:
+#   - top
+#   - bottom
+#   - left
+#   - right
+c.tabs.position = 'top'
+
+# When to show the tab bar.
+# Type: String
+# Valid values:
+#   - always: Always show the tab bar.
+#   - never: Always hide the tab bar.
+#   - multiple: Hide the tab bar if only one tab is open.
+#   - switching: Show the tab bar when switching tabs.
+c.tabs.show = 'always'
+
+# Duration (in milliseconds) to show the tab bar before hiding it when
+# tabs.show is set to 'switching'.
+# Type: Int
+c.tabs.show_switching_delay = 2000
+
+# Format to use for the tab title. The following placeholders are
+# defined:  * `{perc}`: Percentage as a string like `[10%]`. *
+# `{perc_raw}`: Raw percentage, e.g. `10`. * `{current_title}`: Title of
+# the current web page. * `{title_sep}`: The string ` - ` if a title is
+# set, empty otherwise. * `{index}`: Index of this tab. * `{id}`:
+# Internal tab ID of this tab. * `{scroll_pos}`: Page scroll position. *
+# `{host}`: Host of the current web page. * `{backend}`: Either
+# ''webkit'' or ''webengine'' * `{private}`: Indicates when private mode
+# is enabled. * `{current_url}`: URL of the current web page. *
+# `{protocol}`: Protocol (http/https/...) of the current web page. *
+# `{audio}`: Indicator for audio/mute status.
+# Type: FormatString
+c.tabs.title.format = '{host}'
+
+# Format to use for the tab title for pinned tabs. The same placeholders
+# like for `tabs.title.format` are defined.
+# Type: FormatString
+c.tabs.title.format_pinned = '{index}'
+
+# Width (in pixels or as percentage of the window) of the tab bar if
+# it's vertical.
+# Type: PercOrInt
+c.tabs.width = '15%'
+
+# Width (in pixels) of the progress indicator (0 to disable).
+# Type: Int
+c.tabs.indicator.width = 0
+
+# Padding (in pixels) for tab indicators.
+# Type: Padding
+c.tabs.indicator.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 10}
+
+# Wrap when changing tabs.
+# Type: Bool
+c.tabs.wrap = True
+
+# Search engines which can be used via the address bar. Maps a search
+# engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
+# placeholder. The placeholder will be replaced by the search term, use
+# `{{` and `}}` for literal `{`/`}` signs. The search engine named
+# `DEFAULT` is used when `url.auto_search` is turned on and something
+# else than a URL was entered to be opened. Other search engines can be
+# used by prepending the search engine name to the search term, e.g.
+# `:open google qutebrowser`.
+# Type: Dict
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q=g!+{}', 'git': 'https://github.com/search?q={}'}
+
+# Default zoom level.
+# Type: Perc
+c.zoom.default = '150%'
+
+# Background color of the completion widget for odd rows.
+# Type: QssColor
+c.colors.completion.odd.bg = '#2d2d2d'
+
+# Background color of the completion widget for even rows.
+# Type: QssColor
+c.colors.completion.even.bg = '#282828'
+
+# Foreground color of completion widget category headers.
+# Type: QtColor
+c.colors.completion.category.fg = '#6699cc'
 
 # Background color of the completion widget category headers.
 # Type: QssColor
@@ -26,35 +241,23 @@ c.colors.completion.category.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:
 # Type: QssColor
 c.colors.completion.category.border.top = 'black'
 
-# Foreground color of completion widget category headers.
+# Foreground color of the selected completion item.
 # Type: QtColor
-c.colors.completion.category.fg = '#6699cc'
-
-# Background color of the completion widget for even rows.
-# Type: QssColor
-c.colors.completion.even.bg = '#282828'
+c.colors.completion.item.selected.fg = '#1d2021'
 
 # Background color of the selected completion item.
 # Type: QssColor
 c.colors.completion.item.selected.bg = '#f99157'
 
-# Top border color of the completion widget category headers.
+# Top border color of the selected completion item.
 # Type: QssColor
 c.colors.completion.item.selected.border.top = '#bbbb00'
 
-# Foreground color of the selected completion item.
-# Type: QtColor
-c.colors.completion.item.selected.fg = '#1d2021'
-
 # Foreground color of the matched text in the completion.
-# Type: QssColor
+# Type: QtColor
 c.colors.completion.match.fg = '#f99157'
 
-# Background color of the completion widget for odd rows.
-# Type: QssColor
-c.colors.completion.odd.bg = '#2d2d2d'
-
-# Color of the scrollbar handle in completion view.
+# Color of the scrollbar handle in the completion view.
 # Type: QssColor
 c.colors.completion.scrollbar.fg = 'white'
 
@@ -79,18 +282,6 @@ c.colors.statusbar.url.hover.fg = 'aqua'
 # Type: QssColor
 c.colors.statusbar.url.success.http.fg = 'white'
 
-# Background color of unselected even tabs.
-# Type: QtColor
-c.colors.tabs.even.bg = '#2d2d2d'
-
-# Foreground color of unselected even tabs.
-# Type: QtColor
-c.colors.tabs.even.fg = 'white'
-
-# Color for the tab indicator on errors.
-# Type: QtColor
-c.colors.tabs.indicator.error = '#ff0000'
-
 # Color gradient start for the tab indicator.
 # Type: QtColor
 c.colors.tabs.indicator.start = '#0000aa'
@@ -99,62 +290,54 @@ c.colors.tabs.indicator.start = '#0000aa'
 # Type: QtColor
 c.colors.tabs.indicator.stop = '#00aa00'
 
-# Background color of unselected odd tabs.
+# Color for the tab indicator on errors.
 # Type: QtColor
-c.colors.tabs.odd.bg = '#2d2d2d'
+c.colors.tabs.indicator.error = '#ff0000'
 
 # Foreground color of unselected odd tabs.
 # Type: QtColor
 c.colors.tabs.odd.fg = 'white'
 
-# Background color of selected even tabs.
+# Background color of unselected odd tabs.
 # Type: QtColor
-c.colors.tabs.selected.even.bg = 'white'
+c.colors.tabs.odd.bg = '#2d2d2d'
 
-# Foreground color of selected even tabs.
+# Foreground color of unselected even tabs.
 # Type: QtColor
-c.colors.tabs.selected.even.fg = '#2d2d2d'
+c.colors.tabs.even.fg = 'white'
 
-# Background color of selected odd tabs.
+# Background color of unselected even tabs.
 # Type: QtColor
-c.colors.tabs.selected.odd.bg = 'white'
+c.colors.tabs.even.bg = '#2d2d2d'
 
 # Foreground color of selected odd tabs.
 # Type: QtColor
 c.colors.tabs.selected.odd.fg = '#2d2d2d'
 
+# Background color of selected odd tabs.
+# Type: QtColor
+c.colors.tabs.selected.odd.bg = 'white'
+
+# Foreground color of selected even tabs.
+# Type: QtColor
+c.colors.tabs.selected.even.fg = '#2d2d2d'
+
+# Background color of selected even tabs.
+# Type: QtColor
+c.colors.tabs.selected.even.bg = 'white'
+
 # Background color for webpages if unset (or empty to use the theme's
-# color)
+# color).
 # Type: QtColor
 c.colors.webpage.bg = 'white'
 
-# The proxy to use. In addition to the listed values, you can use a
-# `socks://...` or `http://...` URL.
-# Type: Proxy
-# Valid values:
-#   - system: Use the system wide proxy.
-#   - none: Don't use any proxy
-c.content.proxy = 'system'
-
-# Where to show the downloaded files.
-# Type: VerticalPosition
-# Valid values:
-#   - top
-#   - bottom
-c.downloads.position = 'bottom'
-
-# The editor (and arguments) to use for the `open-editor` command. `{}`
-# gets replaced by the filename of the file to be edited.
-# Type: ShellCommand
-c.editor.command = ["i3-sensible-terminal", "-e", "vim {}"]
+# Font used in the completion widget.
+# Type: Font
+c.fonts.completion.entry = '12pt SNFS Display'
 
 # Font used in the completion categories.
 # Type: Font
-c.fonts.completion.category = ' 10pt SNFS Display'
-
-# Font used in the completion widget.
-# Type: Font
-c.fonts.completion.entry = '10pt SNFS Display'
+c.fonts.completion.category = ' 12pt SNFS Display'
 
 # Font used for the debugging console.
 # Type: QtFont
@@ -162,12 +345,7 @@ c.fonts.debug_console = '10pt SNFS Display'
 
 # Font used for the hints.
 # Type: Font
-c.fonts.hints = '14pt SNFS Display'
-
-# Default monospace fonts. Whenever "monospace" is used in a font
-# setting, it's replaced with the fonts listed here.
-# Type: Font
-c.fonts.monospace = '"Hack", Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.hints = '12pt SNFS Display'
 
 # Font used in the tab bar.
 # Type: QtFont
@@ -177,97 +355,12 @@ c.fonts.tabs = '10pt SFNS Display'
 # Type: FontFamily
 c.fonts.web.family.standard = None
 
-# Enable smooth scrolling for web pages. Note smooth scrolling does not
-# work with the `:scroll-px` command.
-# Type: Bool
-c.scrolling.smooth = False
-
-# Padding for tab indicators
-# Type: Padding
-c.tabs.indicator.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 10}
-
-# Behavior when the last tab is closed.
-# Type: String
-# Valid values:
-#   - ignore: Don't do anything.
-#   - blank: Load a blank page.
-#   - startpage: Load the start page.
-#   - default-page: Load the default page.
-#   - close: Close the window.
-c.tabs.last_close = 'close'
-
-# Padding around text for tabs
-# Type: Padding
-c.tabs.padding = {'bottom': 10, 'left': 10, 'right': 10, 'top': 10}
-
-# The position of the tab bar.
-# Type: Position
-# Valid values:
-#   - top
-#   - bottom
-#   - left
-#   - right
-c.tabs.position = 'top'
-
-# The format to use for the tab title. The following placeholders are
-# defined:  * `{perc}`: The percentage as a string like `[10%]`. *
-# `{perc_raw}`: The raw percentage, e.g. `10` * `{title}`: The title of
-# the current web page * `{title_sep}`: The string ` - ` if a title is
-# set, empty otherwise. * `{index}`: The index of this tab. * `{id}`:
-# The internal tab ID of this tab. * `{scroll_pos}`: The page scroll
-# position. * `{host}`: The host of the current web page. * `{backend}`:
-# Either ''webkit'' or ''webengine'' * `{private}` : Indicates when
-# private mode is enabled.
-# Type: FormatString
-c.tabs.title.format = '{host}'
-
-# The format to use for the tab title for pinned tabs. The same
-# placeholders like for `tabs.title.format` are defined.
-# Type: FormatString
-c.tabs.title.format_pinned = '{index}'
-
-# The width of the tab bar if it's vertical, in px or as percentage of
-# the window.
-# Type: PercOrInt
-c.tabs.width = '15%'
-
-# Width of the progress indicator (0 to disable).
-# Type: Int
-c.tabs.indicator.width = 0
-
-# Whether to wrap when changing tabs.
-# Type: Bool
-c.tabs.wrap = True
-
-c.tabs.show = 'switching'
-c.tabs.show_switching_delay = 2000
-
-
-c.confirm_quit = ['multiple-tabs']
-# Definitions of search engines which can be used via the address bar.
-# Maps a searchengine name (such as `DEFAULT`, or `ddg`) to a URL with a
-# `{}` placeholder. The placeholder will be replaced by the search term,
-# use `{{` and `}}` for literal `{`/`}` signs. The searchengine named
-# `DEFAULT` is used when `url.auto_search` is turned on and something
-# else than a URL was entered to be opened. Other search engines can be
-# used by prepending the search engine name to the search term, e.g.
-# `:open google qutebrowser`.
-# Type: Dict
-c.url.searchengines = {
-    'DEFAULT': 'https://duckduckgo.com/?q=g!+{}',
-    'git': 'https://github.com/search?q={}'
-}
-
-# The default zoom level.
-# Type: Perc
-c.zoom.default = '150%'
-
 # Bindings for normal mode
 config.bind('J', 'tab-prev')
 config.bind('K', 'tab-next')
 config.bind('X', 'undo')
 config.bind('d', 'scroll-page 0 0.5')
+config.bind('ge', 'open-editor')
+config.bind('sp', 'pocket')
 config.bind('u', 'scroll-page 0 -0.5')
 config.bind('x', 'tab-close')
-config.bind('sp', 'pocket')
-config.bind('ge', 'open-editor')
