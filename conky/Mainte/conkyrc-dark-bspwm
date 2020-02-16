@@ -1,6 +1,6 @@
 conky.config = {
     background = false,
-    font = 'FuraCode Nerd Font:pixelsize=18',
+    font = 'FuraCode Nerd Font:pixelsize=28',
     use_xft = true,
     xftalpha = 1.0,
     update_interval = 4,
@@ -24,14 +24,14 @@ conky.config = {
     default_shade_color = '#BEC8CB',
     default_outline_color = '#BEC8CB',
     alignment = 'top_left',
-    gap_x = 1420,
-    gap_y = 145,
+    gap_x = 2280,
+    gap_y = 155,
     no_buffers = true,
     cpu_avg_samples = 2,
     net_avg_samples = 2,
     use_spacer = 'none',
-    maximum_width = 1024,
-    minimum_height = 1400,
+    maximum_width = 1800,
+    minimum_height = 2100,
     uppercase = true,
 };
 
@@ -43,7 +43,7 @@ ${alignr}${offset -110}< ${exec lsb_release -ds | sed 's/"//g'} > Distro ─┤
 ${alignr}${offset -110}< ${kernel} > Kernel ─┤
 ${alignr}${offset -110}< ${uptime_short} > Uptime ─┘
 ${voffset 0}
-${alignr}${offset -25}┌─────
+${alignr}${offset 5}┌─────
 ${alignr}${offset -80}│
 ${alignr}${offset -80}< ${exec lspci | grep VGA | head -1 | sed 's/00:02.0 VGA compatible controller: //g' | sed 's/ Corporation//g' | sed 's/ Integrated Graphics Controller (primary) (rev 0c)//g'} > GPU ────────────┘
 ${alignr}${offset -230}< ${exec xdpyinfo | awk '/dimensions/{print $2}'} > Res
@@ -74,7 +74,7 @@ ${alignr}${offset -75}│
 ${voffset 10}
 ${alignr}${offset -75}${addr wlan0} : ${wireless_essid wlan0} : SSID ────────────┐
 ${alignr}${offset -120}UP < ${color #BEC8CB}${upspeedgraph wlan0 15,130 BCC3C3 BCC3C3}${color} >${voffset 0}${offset 45}│
-${alignr}${offset -110}${voffset 10}DOWN < ${color #BEC8CB}${downspeedgraph wlan0 15,130 BCC3C3 BCC3C3}${color} >${voffset -11}${offset 46}└─
+${alignr}${offset -105}${voffset 10}DOWN < ${color #BEC8CB}${downspeedgraph wlan0 15,130 BCC3C3 BCC3C3}${color} >${voffset -11}${offset 46}└─
 ${voffset 40}
 ${alignr}${offset -75}${exec cat /sys/class/power_supply/BAT0/capacity} : Battery ───────────────────┐
 ${alignr}${offset -95}< ${exec acpi | grep "Battery 0" | awk '{print $4}'} | ${battery_percent BAT0}% > BAT 0 < ${color #BEC8CB}${battery_bar 5,110 BAT0}${color} >
@@ -82,7 +82,7 @@ ${voffset 25}
 ${alignr}${offset -130}Hard Drive ─────────────────┐
 ${alignr}${offset -140}< ${fs_used_perc}% > Root < ${color #BEC8CB}${fs_bar 5,120 /}${color} >${offset 10}│
 ${alignr}${offset -140}< ${fs_used_perc /home}% > Home < ${color #BEC8CB}${fs_bar 5,120 /home}${color} >${offset 10}│
-${alignr}${offset -8}< ${swapperc}% > Swap < ${color #BEC8CB}${swapbar 5,120}${color} >${offset 10}└────────────
+${alignr}${offset 65}< ${swapperc}% > Swap < ${color #BEC8CB}${swapbar 5,120}${color} >${offset 10}└────────────
 # ${alignr}${offset -640}volume: ${exec amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }'}
 
 ]];

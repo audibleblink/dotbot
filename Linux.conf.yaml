@@ -32,9 +32,9 @@
     ~/.config/i3blocks:
       create: true
       path: i3blocks
-    ~/.config/compton/config:
+    ~/.config/picom/picom.conf:
       create: true
-      path: i3/.compton.conf
+      path: i3/.picom.conf
     ~/.config/vivaldi-flags.conf:
       create: true
       path: vivaldi-flags.conf

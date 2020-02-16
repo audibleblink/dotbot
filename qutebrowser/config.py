@@ -20,6 +20,14 @@ c.aliases = {'pocket': 'open -t https://getpocket.com/edit?url={url}', 'q': 'qui
 #   - never: Never show a confirmation.
 c.confirm_quit = ['multiple-tabs']
 
+# Turn on Qt HighDPI scaling. This is equivalent to setting
+# QT_AUTO_SCREEN_SCALE_FACTOR=1 or QT_ENABLE_HIGHDPI_SCALING=1 (Qt >=
+# 5.14) in the environment. It's off by default as it can cause issues
+# with some bitmap fonts. As an alternative to this, it's possible to
+# set font sizes and the `zoom.default` setting.
+# Type: Bool
+c.qt.highdpi = True
+
 # Always restore open sites when qutebrowser is reopened.
 # Type: Bool
 c.auto_save.session = True

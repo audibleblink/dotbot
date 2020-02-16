@@ -81,3 +81,4 @@ rofi.fullscreen: false
 rofi.auto-select: false
 rofi.border-radius: 8
 
+Xft.dpi: 192
