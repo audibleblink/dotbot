@@ -56,7 +56,7 @@ filetype plugin indent on
   endif
   " colorscheme wal
   colorscheme onedark
-  hi CursorLine term=bold cterm=bold guibg=Grey40
+  " hi CursorLine term=bold cterm=bold guibg=Grey40
 
 
   " set background=dark

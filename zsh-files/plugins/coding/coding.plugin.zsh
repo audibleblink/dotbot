@@ -17,12 +17,11 @@ alias asi='find . -not -iwholename "*node_modules*" -type f -name *.js | xargs f
 ###############
 # Go
 ###############
-source /${HOME}/.gvm/scripts/gvm
+gvm="${HOME}/.gvm/scripts/gvm"
+[[ -e "${gvm}" ]] && source "${gvm}"
 
 
 ###############
 # Python
 ###############
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
+type pyenv &>/dev/null && eval "$(pyenv init -)"

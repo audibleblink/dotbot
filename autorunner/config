@@ -31,7 +31,7 @@ execute "0" "0" "dropbox start"
 
 execute "0" "1" "clipmenud"
 execute "0" "1" "nm-applet"
-execute "0" "1" "xss-lock -v -n \"notify-send --urgency=critical --icon=/usr/share/icons/Adwaita/48x48/actions/system-lock-screen.png -- 'Auto-lock in 30 sec.'\" -- betterlockscreen -l dim"
+execute "0" "1" "xss-lock -- betterlockscreen -l dim"
 
 execute "1" "1" "picom"
 execute "1" "1" "thunar --daemon"

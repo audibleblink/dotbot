@@ -26,7 +26,8 @@ alias lsa='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias l='ls -lth'
-alias ls='ls -FGh'
+alias lr='ls -ltrh'
+alias ls='ls -Fh'
 
 type tree &>/dev/null && alias tree='LS_COLORS="di=34:ln=35:so=32;40:ex=31" tree'
 
