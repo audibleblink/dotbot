@@ -47,19 +47,19 @@
   bindsym $mod+e layout toggle split
 
 # Window-Navigation Bindings
-  bindsym $mod+Shift+p focus parent
-  bindsym $mod+Shift+q kill
-  bindsym $mod+h focus left
-  bindsym $mod+j focus down
-  bindsym $mod+k focus up
-  bindsym $mod+l focus right
-  bindsym $mod+Shift+h move left
-  bindsym $mod+Shift+j move down
-  bindsym $mod+Shift+k move up
-  bindsym $mod+Shift+l move right
+  bindsym $mod+Shift+p     focus parent
+  bindsym $mod+Shift+q     kill
+  bindsym $mod+h           focus left
+  bindsym $mod+j           focus down
+  bindsym $mod+k           focus up
+  bindsym $mod+l           focus right
+  bindsym $mod+Shift+h     move left
+  bindsym $mod+Shift+j     move down
+  bindsym $mod+Shift+k     move up
+  bindsym $mod+Shift+l     move right
   bindsym $mod+Shift+space floating toggle
-  bindsym $mod+f fullscreen toggle
-  bindsym $mod+space focus mode_toggle
+  bindsym $mod+f           fullscreen toggle
+  bindsym $mod+space       focus mode_toggle
 
 # Resizing Controls
   bindsym $mod+r mode "  "
@@ -120,18 +120,18 @@ gaps outer 1
 # smart_gaps on
 
 # Pulse Audio controls
-  bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10% #increase sound volume
-  bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10% #decrease sound volume
-  bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+  bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10%   # increase sound volume
+  bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10%   # decrease sound volume
+  bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute   0 toggle # mute  sound
 
 # Media player controls
-  bindsym XF86Search  exec playerctl play-pause
-  bindsym XF86LaunchA exec playerctl next
-  bindsym XF86Tools   exec playerctl previous
+  bindsym $mod+Up    exec playerctl play-pause
+  bindsym $mod+Right exec playerctl next
+  bindsym $mod+Left  exec playerctl previous
 
 # Screen brightness controls
-  bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-  bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+  bindsym XF86MonBrightnessUp   exec backlight.py  250  # increase screen brightness
+  bindsym XF86MonBrightnessDown exec backlight.py -250  # decrease screen brightness
 
 # Startup
   exec_always --no-startup-id sh ${HOME}/.local/bin/autorunner
