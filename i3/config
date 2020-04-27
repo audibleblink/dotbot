@@ -27,7 +27,7 @@
   bindsym $mod+backslash split h
 
 # Program Settings
-  bindsym $mod+Return exec termite
+  bindsym $mod+Return exec i3-sensible-terminal
   bindsym $mod+d exec rofi -show run
   bindsym $mod+p exec betterlockscreen -l dim
   bindsym $mod+c exec CM_LAUNCHER=rofi CM_HISTLENGTH=5 clipmenu
