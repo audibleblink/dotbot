@@ -23,7 +23,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'dylanaraps/wal.vim'
 
 Plug 'OmniSharp/omnisharp-vim',        { 'for': 'cs' }
@@ -45,8 +45,11 @@ filetype plugin indent on
   let g:instant_markdown_autostart = 0
 
 " Go Completor
-  let g:completor_gocode_binary = 'gocode'
   let g:completor_cs_omni_trigger = '.*'
+
+  " Enable lsp for go by using gopls
+  let g:completor_filetype_map = {}
+  let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls'}
 
 " Colorscheme
   syntax on
@@ -55,8 +58,8 @@ filetype plugin indent on
     set t_ut=
   endif
   " colorscheme wal
-  " colorscheme onedark
   hi CursorLine term=bold cterm=bold guibg=Grey40
+  colorscheme onedark
 
 
   " set background=dark
@@ -68,6 +71,8 @@ filetype plugin indent on
 
 " VimWiki
   let g:vimwiki_list = [{'path': '~/private/VimWiki/index.wiki'}]
+  let g:vimwiki_folding = "expr:quick"
+  let g:vimwiki_auto_tags = 1
 
 " Tmux Navigator
   " Send :update when leaving vim for tmux
@@ -77,35 +82,45 @@ filetype plugin indent on
   " Layout
   let g:fzf_layout = { 'down': '~35%'  }
 
+  " FZF w/ RipGrep
+  set grepprg=rg\ --vimgrep
+  " --column: Show column number
+  " --line-number: Show line number
+  " --no-heading: Do not show file headings in results
+  " --fixed-strings: Search term as a literal string
+  " --ignore-case: Case insensitive search
+  " --no-ignore: Do not respect .gitignore, etc...
+  " --hidden: Search hidden files and folders
+  " --follow: Follow symlinks
+  " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+  " --color: Search color options
+  "  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+
 " EasyAlign
   " Start interactive EasyAlign in visual mode (e.g. vipga)
   xmap ga <Plug>(EasyAlign)
+
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
 
 
-" FZF w/ RipGrep
-set grepprg=rg\ --vimgrep
-" --column: Show column number
-" --line-number: Show line number
-" --no-heading: Do not show file headings in results
-" --fixed-strings: Search term as a literal string
-" --ignore-case: Case insensitive search
-" --no-ignore: Do not respect .gitignore, etc...
-" --hidden: Search hidden files and folders
-" --follow: Follow symlinks
-" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-" --color: Search color options
-"  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+" Ale
+  let g:ale_linters = { 'cs': ['OmniSharp'] }
+  let g:ale_completion_enabled = 1
+  " let g:OmniSharp_server_use_mono = 1
+  " let g:OmniSharp_server_path = '/home/link/.omnisharp/omnisharp-roslyn/OmniSharp.exe'
+  " let g:OmniSharp_selector_ui = 'fzf'
+  " let g:OmniSharp_host = 'http://localhost:2000'
+  " let g:OmniSharp_proc_debug = 1
+  " let g:OmniSharp_loglevel = 'debug'
 
-" let g:OmniSharp_server_use_mono = 1
-" let g:OmniSharp_server_path = '/home/link/.omnisharp/omnisharp-roslyn/OmniSharp.exe'
-let g:ale_linters = { 'cs': ['OmniSharp'] }
-" let g:OmniSharp_selector_ui = 'fzf'
-" let g:OmniSharp_host = 'http://localhost:2000'
-" let g:OmniSharp_proc_debug = 1
-" let g:OmniSharp_loglevel = 'debug'
+augroup ruby
+    autocmd FileType rb nmap <Leader>ra :call RunAllSpecs()<CR>
+    autocmd FileType rb nmap <Leader>rl :call RunLastSpec()<CR>
+    autocmd FileType rb nmap <Leader>rs :call RunNearestSpec()<CR>
+    autocmd FileType rb nmap <Leader>rt :call RunCurrentSpecFile()<CR>
+augroup END
 
 augroup omnisharp_commands
     autocmd!
@@ -138,7 +153,7 @@ augroup omnisharp_commands
 augroup END
 
 au! BufNewFile,BufRead *.svelte set ft=html
-
+"
 " Python Dev
 let g:completor_python_binary = '/usr/bin/python3'
 
