@@ -35,6 +35,9 @@
     ~/.config/compton/config:
       create: true
       path: i3/.compton.conf
+    ~/.urxvt:
+      create: true
+      path: urxvt
     ~/.config/vivaldi-flags.conf:
       create: true
       path: vivaldi-flags.conf
