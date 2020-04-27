@@ -38,6 +38,9 @@
     ~/.config/picom/picom.conf:
       create: true
       path: i3/.picom.conf
+    ~/.urxvt:
+      create: true
+      path: urxvt
     ~/.config/vivaldi-flags.conf:
       create: true
       path: vivaldi-flags.conf

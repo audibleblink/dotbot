@@ -82,3 +82,33 @@ rofi.auto-select: false
 rofi.border-radius: 8
 
 Xft.dpi: 192
+
+!! URxvt Appearance
+URxvt.font: xft:Hack:style=Regular:size=14
+URxvt.boldFont: xft:Hack:style=Bold:size=14
+URxvt.italicFont: xft:Hack:style=Italic:size=14
+URxvt.boldItalicfont: xft:Hack:style=Bold Italic:size=14
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 24
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 32
+URxvt.iso14755: false
+
+!! URxvt Funtionality
+URxvt.perl-ext-common: default,selection-to-clipboard,pasta,url-select,keyboard-select,font-size
+URxvt.clipboard.autocopy: true
+URxvt.underlineURLs:  True
+URxvt.keysym.S-Return: \033[13;2u
+URxvt.keysym.C-Return: \033[13;5u
+URxvt.keysym.Control-Shift-V: perl:pasta:paste
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.keysym.M-u: perl:url-select:select_next
+
