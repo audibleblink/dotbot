@@ -120,9 +120,9 @@ gaps outer 1
 # smart_gaps on
 
 # Pulse Audio controls
-  bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10%   # increase sound volume
-  bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10%   # decrease sound volume
-  bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute   0 toggle # mute  sound
+  bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +10%   # increase sound volume
+  bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -10%   # decrease sound volume
+  bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute   1 toggle # mute  sound
 
 # Media player controls
   bindsym $mod+Up    exec playerctl play-pause
