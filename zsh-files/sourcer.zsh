@@ -1,5 +1,4 @@
 PLUGINS=$ZSH_CUSTOM/plugins/
-COMPLETION_WAITING_DOTS="true"
 mkdir $ZSH &>/dev/null
 
 function is_plugin {

@@ -5,6 +5,9 @@
 - clean: ['~']
 
 - link:
+    ~/.config/systemd: 
+      create: true
+      path: systemd
     ~/.config/conky: 
       create: true
       path: conky
