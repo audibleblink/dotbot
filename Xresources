@@ -84,7 +84,7 @@ rofi.border-radius: 8
 Xft.dpi: 192
 
 !! URxvt Appearance
-URxvt.font: xft:Hack:style=Regular:size=14
+URxvt.font: xft:Hack:style=Regular:size=14,xft:Source Code Pro:style=Regular:size=10,xft:DejaVu Sans:size=8
 URxvt.boldFont: xft:Hack:style=Bold:size=14
 URxvt.italicFont: xft:Hack:style=Italic:size=14
 URxvt.boldItalicfont: xft:Hack:style=Bold Italic:size=14
