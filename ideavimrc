@@ -1,0 +1,34 @@
+" Places selected text in a search/replace command
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" One-off search and replace
+nnoremap c* *Ncgn
+
+inoremap jk <ESC>
+cnoremap jk <ESC>
+nnoremap <CR> :
+vnoremap <CR> :
+
+" Navigation
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+nnoremap <C-n> <down>
+nnoremap <C-p> <up>
+
+
+let mapleader = " "
+vnoremap <Leader>y  "+y
+nnoremap <Leader>u  "+p
+
+" IntelliJ-Specific
+map <Leader>p :action GotoFile<CR>
+map <Leader><Tab> :action PreviousTab<CR>
+
+map <Leader>dd :action Debug<CR>
+map <Leader>db :action ToggleLineBreakpoint<CR>
+map <Leader>ds :action StepOver<CR>
+map <Leader>di :action StepInto<CR>
+
