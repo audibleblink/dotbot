@@ -349,7 +349,8 @@ c.fonts.hints = '12pt SNFS Display'
 
 # Font used in the tab bar.
 # Type: QtFont
-c.fonts.tabs = '10pt SFNS Display'
+c.fonts.tabs.selected = '10pt SFNS Display'
+c.fonts.tabs.unselected = '10pt SFNS Display'
 
 # Font family for standard fonts.
 # Type: FontFamily
