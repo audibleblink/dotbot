@@ -23,6 +23,6 @@ source /${HOME}/.gvm/scripts/gvm
 ###############
 # Python
 ###############
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 

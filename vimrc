@@ -8,8 +8,8 @@ set autoread
 set autowrite
 set backspace=2
 set colorcolumn=+1
-set cursorcolumn
-set cursorline
+" set cursorcolumn
+" set cursorline
 set expandtab
 set foldlevelstart=99
 set foldmethod=indent

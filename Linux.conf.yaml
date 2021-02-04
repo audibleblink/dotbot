@@ -43,6 +43,7 @@
       path: vivaldi-flags.conf
     ~/.fonts: fonts
     ~/.fzf.zsh: fzf.zsh
+    ~/.gdbinit: gdbinit
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.gnupg: gnupg

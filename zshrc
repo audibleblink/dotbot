@@ -33,8 +33,23 @@ alias zedit="e ~/.zshrc"
 alias vedit="e ~/.vimrc"
 alias tedit="e ~/.tmux.conf"
 alias bedit="e ~/.vim/plugins.vim"
+alias sedit="e ~/.ssh/config"
 alias reload="source ~/.zshrc"
 alias zstd='zstd -4 -v -T0'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
+
+
+function get-ssh() {
+  # read the selected Host entry
+  IFS=: read host <<< $(grep '^Host' ${HOME}/.ssh/config | sed 's/Host //'| fzf)
+  # set the local buffer to the new command
+  LBUFFER="${LBUFFER} ${host}"
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+
+zle     -N   get-ssh
+bindkey '^S' get-ssh

@@ -7,6 +7,7 @@ Plug 'dylanaraps/wal.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jiangmiao/auto-pairs'
+Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
@@ -14,6 +15,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user' 
 Plug 'maralla/completor.vim'
+Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
@@ -26,6 +28,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'dense-analysis/ale'
 Plug 'dylanaraps/wal.vim'
 
+Plug 'yaunj/vim-yara',                 { 'for': 'yar' }
 Plug 'OmniSharp/omnisharp-vim',        { 'for': 'cs' }
 Plug 'chrisbra/vim-zsh',               { 'for': 'zsh' }
 Plug 'fatih/vim-go',                   { 'for': 'go', 'do': ':GoInstallBinaries' }
@@ -155,5 +158,9 @@ augroup END
 au! BufNewFile,BufRead *.svelte set ft=html
 "
 " Python Dev
-let g:completor_python_binary = '/usr/bin/python3'
+  let g:completor_python_binary = '/usr/bin/python3'
 
+" Slime
+  let g:slime_target = "tmux"
+  let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
+  let g:slime_python_ipython = 1
