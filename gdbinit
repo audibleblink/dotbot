@@ -1,6 +1,5 @@
-# source /usr/share/peda/peda.py
-source /usr/share/pwndbg/gdbinit.py
-source /home/red/code/splitmind/gdbinit.py
+source ~/pwndbg/gdbinit.py
+source ~/code/splitmind/gdbinit.py
 python
 import splitmind
 (splitmind.Mind()
