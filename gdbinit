@@ -1,4 +1,4 @@
-source ~/pwndbg/gdbinit.py
+source ~/code/pwndbg/gdbinit.py
 source ~/code/splitmind/gdbinit.py
 python
 import splitmind
