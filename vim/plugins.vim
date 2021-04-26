@@ -2,6 +2,7 @@ set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
+Plug 'audibleblink/hackthebox.vim'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'dylanaraps/wal.vim'
 Plug 'airblade/vim-gitgutter'
@@ -28,15 +29,14 @@ Plug 'vimwiki/vimwiki'
 Plug 'dense-analysis/ale'
 Plug 'dylanaraps/wal.vim'
 
+
 Plug 'yaunj/vim-yara',                 { 'for': 'yar' }
 Plug 'OmniSharp/omnisharp-vim',        { 'for': 'cs' }
 Plug 'chrisbra/vim-zsh',               { 'for': 'zsh' }
 Plug 'fatih/vim-go',                   { 'for': 'go', 'do': ':GoInstallBinaries' }
-" Plug 'sebdah/vim-delve',               { 'for': 'go' }
 Plug 'freitass/todo.txt-vim',          { 'for': 'txt' }
 Plug 'mattn/emmet-vim',                { 'for': ['html', 'javascript.jsx'] }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
-" Plug 'suan/vim-instant-markdown',      { 'for': 'markdown' }
 Plug 'thoughtbot/vim-rspec',           { 'for': 'ruby' }
 Plug 'tpope/vim-bundler',              { 'for': 'ruby' }
 Plug 'tpope/vim-cucumber',             { 'for': 'ruby' }
@@ -60,14 +60,12 @@ filetype plugin indent on
     set termguicolors
     set t_ut=
   endif
-  " colorscheme wal
-  hi CursorLine term=bold cterm=bold guibg=Grey40
-  colorscheme onedark
+  colorscheme hackthebox
 
 
   " set background=dark
   " colorscheme oneplus
-  let g:onedark_terminal_italics = 1
+  " let g:onedark_terminal_italics = 1
 
 " RSpec.vim mappings
   let g:rspec_command = "VtrSendCommandToRunner! zeus rspec {spec}"
@@ -109,8 +107,8 @@ filetype plugin indent on
 
 
 " Ale
-  let g:ale_linters = { 'cs': ['OmniSharp'] }
   let g:ale_completion_enabled = 1
+  let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['rls', 'cargo'] }
   " let g:OmniSharp_server_use_mono = 1
   " let g:OmniSharp_server_path = '/home/link/.omnisharp/omnisharp-roslyn/OmniSharp.exe'
   " let g:OmniSharp_selector_ui = 'fzf'
@@ -159,6 +157,9 @@ au! BufNewFile,BufRead *.svelte set ft=html
 "
 " Python Dev
   let g:completor_python_binary = '/usr/bin/python3'
+
+" Rust
+  let g:rustfmt_autosave = 1
 
 " Slime
   let g:slime_target = "tmux"
