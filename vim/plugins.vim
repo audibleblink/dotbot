@@ -30,11 +30,11 @@ Plug 'dense-analysis/ale'
 Plug 'dylanaraps/wal.vim'
 
 
-Plug 'yaunj/vim-yara',                 { 'for': 'yar' }
-Plug 'OmniSharp/omnisharp-vim',        { 'for': 'cs' }
-Plug 'chrisbra/vim-zsh',               { 'for': 'zsh' }
-Plug 'fatih/vim-go',                   { 'for': 'go', 'do': ':GoInstallBinaries' }
-Plug 'freitass/todo.txt-vim',          { 'for': 'txt' }
+Plug 'yaunj/vim-yara',                 { 'for': 'yar'  }
+Plug 'OmniSharp/omnisharp-vim',        { 'for': 'cs'   }
+Plug 'chrisbra/vim-zsh',               { 'for': 'zsh'  }
+Plug 'fatih/vim-go',                   { 'for': 'go'   }
+Plug 'freitass/todo.txt-vim',          { 'for': 'txt'  }
 Plug 'mattn/emmet-vim',                { 'for': ['html', 'javascript.jsx'] }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'thoughtbot/vim-rspec',           { 'for': 'ruby' }
