@@ -60,7 +60,7 @@ filetype plugin indent on
     set termguicolors
     set t_ut=
   endif
-  colorscheme hackthebox
+  colorscheme onedark
 
 
   " set background=dark
